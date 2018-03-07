@@ -194,4 +194,26 @@ KurtInvPlot
 SkewNatPlot
 KurtNatPlot
 
+#Create a vector of values for binning
+xdata = BANKINGrel[,10]
+#get the sample size of the variable
+n <- length(xdata)
+#Declare number of bins and bin indicator
+nbins <- 10
+whichbin <- c(rep(0,n))
+whichbin
+range.xdata <- max(xdata) - min(xdata) +1
+binwidth <- round(range.xdata/nbins)
+for(i in 1:nbins) {
+  for(j in 1:n) {
+    if ((i-1)*binwidth < xdata[j] && xdata[j] <= (i)*binwidth)
+      whichbin[j] <- i
+  }
+}
+whichbin
+xdata
 
+#kmeansclustering <- kmeans(xdata,centers=nbins)
+#whichbin <- kmeansclustering$cluster
+#whichbin
+#xdata
