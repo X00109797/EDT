@@ -20,7 +20,7 @@ v = (1:ncol(BANKINGrel))
 
 NumberOfRecords = nrow(BANKINGrel)
 
-l <- list();
+#l <- list();
 
 TypeV <-c()
 MaxV <- c()
@@ -98,12 +98,11 @@ bars %L+% geom_bar()
 
 ColNo = 10
   
-ggplot(BANKINGrel, aes(BANKINGrel[,ColNo], fill = y))+ geom_histogram(binwidth = 10, col="black")+ ggtitle(paste("Histogram for", colnames(BANKINGrel[ColNo])))+ labs(x=colnames(BANKINGrel[ColNo]), y="Count")
+#ggplot(BANKINGrel, aes(BANKINGrel[,ColNo], fill = y))+ geom_histogram(binwidth = 10, col="black")+ ggtitle(paste("Histogram for", colnames(BANKINGrel[ColNo])))+ labs(x=colnames(BANKINGrel[ColNo]), y="Count")
 
 
 # Creating Scatter Plots for all pairs of numeric values.
 g <- ggloop(BANKINGrel.numeric, aes_loop(x = age:nr.employed, y = age:nr.employed))
-  
 g %L+% geom_point()
 
 #Save Images/ Plots to a file
@@ -189,6 +188,48 @@ xdata
 #xdata
 
 
+# h1 <- ggplot(BANKINGrel, aes(campaign, fill = y))+ geom_histogram(binwidth = 1)+ ggtitle("Histogram for Campaign x Target")
+# h2 <- ggplot(BANKINGrel, aes(age, fill = y))+ geom_histogram(binwidth = 1)+ ggtitle("Histogram for Age x Target")
+# h3 <- ggplot(BANKINGrel, aes(duration, fill = y))+ geom_histogram(binwidth = 50)+ ggtitle("Histogram for Duration x Target")
+# h4 <- ggplot(BANKINGrel, aes(pdays, fill = y))+ geom_histogram(binwidth = 50)+ ggtitle("Histogram for PDays x Target")
+# h5 <- ggplot(BANKINGrel, aes(cons.price.idx, fill = y))+ geom_histogram(binwidth = 1)+ ggtitle("Histogram for Cons Price Index x Target")
+# h6 <- ggplot(BANKINGrel, aes(cons.conf.idx, fill = y))+ geom_histogram(binwidth = 1)+ ggtitle("Histogram for Cons Conf Index x Target")
+# h7 <- ggplot(BANKINGrel, aes(euribor3m, fill = y))+ geom_histogram(binwidth = 1)+ ggtitle("Histogram for Euribor x Target")
+# h8 <- ggplot(BANKINGrel, aes(nr.employed, fill = y))+ geom_histogram(binwidth = 20)+ ggtitle("Histogram for NR Employed x Target")
+# h9 <- ggplot(BANKINGrel, aes(previous, fill = y))+ geom_histogram(binwidth = 1)+ ggtitle("Histogram for Previous x Target")
+# 
+# 
+# h1
+# h2
+# h3
+# h4
+# h5
+# h6
+# h7
+# h8
+#h9
+
+# write.csv(results.data,"C:/Users/Robert/Documents/4th Year/Semester 8/EDT/CA 1/EDT/results.csv")
+#write.csv(results.data, file = "C:/Users/Robert/Documents/4th Year/Semester 8/EDT/CA 1/EDT/results.csv",row.names=TRUE)
+
+b1 <- ggplot(BANKINGrel, aes(job, fill = y))+ geom_bar()+ ggtitle("BarChart for Job x Target")+coord_flip()
+b2 <- ggplot(BANKINGrel, aes(marital, fill = y))+ geom_bar()+ ggtitle("BarChart for Marital x Target")
+b3 <- ggplot(BANKINGrel, aes(education, fill = y))+ geom_bar()+ ggtitle("BarChart for Education x Target")+coord_flip()
+b4 <- ggplot(BANKINGrel, aes(housing, fill = y))+ geom_bar()+ ggtitle("BarChart for Housing x Target")
+b5 <- ggplot(BANKINGrel, aes(loan, fill = y))+ geom_bar()+ ggtitle("BarChart for Loan x Target")
+b6 <- ggplot(BANKINGrel, aes(contact, fill = y))+ geom_bar()+ ggtitle("BarChart for Contact x Target")
+b7 <- ggplot(BANKINGrel, aes(month, fill = y))+ geom_bar()+ ggtitle("BarChart for Month x Target")
+b8 <- ggplot(BANKINGrel, aes(day_of_week, fill = y))+ geom_bar()+ ggtitle("BarChart for Day of Week x Target")
+b9 <- ggplot(BANKINGrel, aes(poutcome, fill = y))+ geom_bar()+ ggtitle("BarChart for POutcome x Target")
 
 
 
+b1
+b2
+b3
+b4
+b5
+b6
+b7
+b8
+b9

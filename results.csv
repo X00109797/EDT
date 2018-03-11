@@ -1,0 +1,20 @@
+,NameF,TypeV,MaxV,MinV,MeanV,MedianV,SDV,ModeV,MissingV,SkewV,KurtV,SkewTypeV,KurtTypeV
+1,Age,integer,88,18,39.9254386,38,10.47227774,32,0.164203612,0.825157644,0.916654452,Skew Right,Leptokurtic
+2,Job,factor,NA,NA,NA,NA,NA,admin.,1.3136289,NA,NA,NA,NA
+3,Marital Status,factor,NA,NA,NA,NA,NA,married,0.328407225,NA,NA,NA,NA
+4,Education Level,factor,NA,NA,NA,NA,NA,university.degree,5.254515599,NA,NA,NA,NA
+5,Housing Loan,factor,NA,NA,NA,NA,NA,yes,2.791461412,NA,NA,NA,NA
+6,Personal Loan,factor,NA,NA,NA,NA,NA,no,2.791461412,NA,NA,NA,NA
+7,Contact Type,factor,NA,NA,NA,NA,NA,cellular,0,NA,NA,NA,NA
+8,Month,factor,NA,NA,NA,NA,NA,may,0,NA,NA,NA,NA
+9,Day,factor,NA,NA,NA,NA,NA,thu,0,NA,NA,NA,NA
+10,Duration,integer,3253,4,257.1143952,181,257.1750048,73,0,3.301309221,20.30109263,Skew Right,Leptokurtic
+11,Campaign,integer,22,1,2.552271483,2,2.467727965,1,0,3.106542274,12.74133453,Skew Right,Leptokurtic
+12,Days Passed,integer,999,0,959.8538588,999,193.3229312,999,0,-4.730783494,20.39186068,Skew Left,Leptokurtic
+13,Previus Contacts,integer,6,0,0.192118227,0,0.560455975,0,0,4.145903931,22.71120782,Skew Right,Leptokurtic
+14,Previous Outcome,factor,NA,NA,NA,NA,NA,nonexistent,0,NA,NA,NA,NA
+15,CPI,numeric,95.601,92.201,93.60154455,93.918,0.575301543,93.994,0.492610837,-0.22665496,-0.779108129,Skew Left,Platykurtic
+16,CCI,numeric,-26.9,-50.8,-40.62759758,-41.8,4.549258248,-36.4,0.4378763,0.210955558,-0.463457601,Skew Right,Platykurtic
+17,Euribor,numeric,5.045,0.635,3.618049261,4.857,1.736966343,4.857,0,-0.700031599,-1.426634673,Skew Left,Platykurtic
+18,No. Employees,numeric,5228.1,4963.6,5165.740285,5191,73.99906047,5228.1,0,-1.082069461,0.109210334,Skew Left,Leptokurtic
+19,Subscribed,factor,NA,NA,NA,NA,NA,no,0,NA,NA,NA,NA
