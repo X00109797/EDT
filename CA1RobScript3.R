@@ -7,6 +7,10 @@
 
 library("ggplot","ggloop","corrplot","e1071")
 
+
+
+
+#******************** Part 1 *******************************************************
 #Mode function. https://www.tutorialspoint.com/r/r_mean_median_mode.htm
 getmode <- function(v) {
   uniqv <- unique(v)
@@ -87,14 +91,26 @@ results.data <- data.frame(NameF,TypeV,MaxV,MinV,MeanV,MedianV,SDV,ModeV,Missing
 
 p <- ggplot(BANKINGrel, aes(x = y ))
 
+
+
+#******************** Part 2 *******************************************************
+
 #Histograms Charts - Categories by Target 
-hists <- ggloop(BANKINGrel, aes_loop(x = age:nr.employed, fill = y))
-hists %L+% stat_count(width = 0.1)
+# hists <- ggloop(BANKINGrel, aes_loop(x = age:nr.employed, fill = y))
+# hists %L+% stat_count(width = 0.1)
+
+#******************** Part 3 *******************************************************
 
 #Bar Charts - Categories by Target 
 bars <- ggloop(BANKINGrel, aes_loop(x = age:nr.employed, fill = y))
 bars %L+% geom_bar()
 
+#******************** Part 4 *******************************************************
+
+extremeValue <- ggplot(BANKINGrel, aes(x=y, y=duration, color=y)) + geom_point()+ ggtitle("Scatter Plot Duartion x Target")
+extremeValue
+
+#******************** Part 5 *******************************************************
 
 ColNo = 10
   
@@ -105,11 +121,6 @@ ColNo = 10
 g <- ggloop(BANKINGrel.numeric, aes_loop(x = age:nr.employed, y = age:nr.employed))
 g %L+% geom_point()
 
-#Save Images/ Plots to a file
-#ggsave(g,"g.png");
-# ggsave("plot", g %L+% geom_point(), device = "png", path = "C:/Users/Robert/Pictures/Plots",
-#        scale = 1, width = NA, height = NA, units = c("in", "cm", "mm"),
-#        dpi = 300, limitsize = TRUE)
 
 
 BANKINGrel.numeric <- BANKINGrel[,sapply(BANKINGrel, is.numeric)]
