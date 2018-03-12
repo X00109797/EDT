@@ -118,8 +118,10 @@ for(i in 1:ncol(BANKINGrel.numeric)){
   BANKINGrel.numeric[is.na(BANKINGrel.numeric[,i]), i] <- mean(BANKINGrel.numeric[,i], na.rm = TRUE)
 }
 
+# M <- cor(BANKINGrel.numeric)
+# corrplot(M, type="upper",method = "shade")
 M <- cor(BANKINGrel.numeric)
-corrplot(M, type="upper",method = "shade")
+corrplot(M, method = "circle", order = "alphabet")
 
 # Z-Score
 zscore.duration <-(BANKINGrel$duration - mean(BANKINGrel$duration ))/sd(BANKINGrel$duration )
