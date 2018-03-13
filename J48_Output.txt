@@ -1,0 +1,2416 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     R_data_frame-weka.filters.unsupervised.attribute.Reorder-R1,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,4
+Instances:    1827
+Attributes:   18
+              age
+              job
+              marital
+              housing
+              loan
+              contact
+              month
+              day_of_week
+              duration
+              campaign
+              pdays
+              previous
+              poutcome
+              cons.price.idx
+              cons.conf.idx
+              euribor3m
+              nr.employed
+              education
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+job = admin.
+|   cons.conf.idx <= -36.4
+|   |   nr.employed <= 5076.2
+|   |   |   pdays <= 11
+|   |   |   |   loan = no: high.school (6.25/2.25)
+|   |   |   |   loan = yes: university.degree (2.0)
+|   |   |   pdays > 11: university.degree (22.25/2.0)
+|   |   nr.employed > 5076.2
+|   |   |   age <= 49
+|   |   |   |   loan = no
+|   |   |   |   |   month = apr
+|   |   |   |   |   |   previous <= 0
+|   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   marital = divorced: university.degree (1.0)
+|   |   |   |   |   |   |   |   marital = married: university.degree (2.0)
+|   |   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   |   age <= 30: university.degree (2.0)
+|   |   |   |   |   |   |   |   |   age > 30: high.school (5.0/1.0)
+|   |   |   |   |   |   |   campaign > 2: high.school (4.0)
+|   |   |   |   |   |   previous > 0: basic.9y (2.0/1.0)
+|   |   |   |   |   month = aug: university.degree (0.0)
+|   |   |   |   |   month = dec: university.degree (0.0)
+|   |   |   |   |   month = jul: high.school (49.45/18.76)
+|   |   |   |   |   month = jun: university.degree (25.25/8.25)
+|   |   |   |   |   month = mar: university.degree (0.0)
+|   |   |   |   |   month = may
+|   |   |   |   |   |   day_of_week = fri: university.degree (17.0/3.0)
+|   |   |   |   |   |   day_of_week = mon
+|   |   |   |   |   |   |   cons.price.idx <= 93.369: university.degree (10.0/1.0)
+|   |   |   |   |   |   |   cons.price.idx > 93.369
+|   |   |   |   |   |   |   |   marital = divorced: university.degree (1.25/0.25)
+|   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   campaign <= 2: university.degree (2.0)
+|   |   |   |   |   |   |   |   |   campaign > 2: high.school (6.0)
+|   |   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   |   duration <= 197: professional.course (2.0)
+|   |   |   |   |   |   |   |   |   duration > 197: university.degree (2.0)
+|   |   |   |   |   |   day_of_week = thu
+|   |   |   |   |   |   |   euribor3m <= 1.268: professional.course (3.0/1.0)
+|   |   |   |   |   |   |   euribor3m > 1.268
+|   |   |   |   |   |   |   |   housing = no: high.school (8.25/3.25)
+|   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   age <= 35: university.degree (3.0)
+|   |   |   |   |   |   |   |   |   age > 35: high.school (4.0/1.0)
+|   |   |   |   |   |   day_of_week = tue
+|   |   |   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   |   |   housing = no: university.degree (2.0)
+|   |   |   |   |   |   |   |   housing = yes: high.school (3.0)
+|   |   |   |   |   |   |   poutcome = nonexistent
+|   |   |   |   |   |   |   |   euribor3m <= 4.856: high.school (11.0/6.0)
+|   |   |   |   |   |   |   |   euribor3m > 4.856: university.degree (8.0/2.0)
+|   |   |   |   |   |   |   poutcome = success: university.degree (1.0)
+|   |   |   |   |   |   day_of_week = wed
+|   |   |   |   |   |   |   age <= 37
+|   |   |   |   |   |   |   |   previous <= 0
+|   |   |   |   |   |   |   |   |   housing = no: university.degree (9.58/0.58)
+|   |   |   |   |   |   |   |   |   housing = yes: high.school (4.26/1.0)
+|   |   |   |   |   |   |   |   previous > 0: basic.6y (2.0/1.0)
+|   |   |   |   |   |   |   age > 37
+|   |   |   |   |   |   |   |   age <= 44: high.school (5.09/1.0)
+|   |   |   |   |   |   |   |   age > 44: basic.9y (3.0/1.0)
+|   |   |   |   |   month = nov
+|   |   |   |   |   |   day_of_week = fri: university.degree (6.84/2.0)
+|   |   |   |   |   |   day_of_week = mon
+|   |   |   |   |   |   |   age <= 34: university.degree (2.0)
+|   |   |   |   |   |   |   age > 34: high.school (4.0)
+|   |   |   |   |   |   day_of_week = thu: university.degree (5.0/1.0)
+|   |   |   |   |   |   day_of_week = tue: high.school (4.84/1.0)
+|   |   |   |   |   |   day_of_week = wed
+|   |   |   |   |   |   |   duration <= 260: basic.9y (2.0/1.0)
+|   |   |   |   |   |   |   duration > 260: university.degree (4.0)
+|   |   |   |   |   month = oct: high.school (1.0)
+|   |   |   |   |   month = sep: university.degree (0.0)
+|   |   |   |   loan = yes
+|   |   |   |   |   month = apr: university.degree (6.0/1.0)
+|   |   |   |   |   month = aug: university.degree (0.0)
+|   |   |   |   |   month = dec: university.degree (0.0)
+|   |   |   |   |   month = jul: university.degree (11.31/3.31)
+|   |   |   |   |   month = jun
+|   |   |   |   |   |   age <= 30: basic.4y (2.0/1.0)
+|   |   |   |   |   |   age > 30: high.school (4.0)
+|   |   |   |   |   month = mar: high.school (1.0)
+|   |   |   |   |   month = may: high.school (12.56/5.0)
+|   |   |   |   |   month = nov: university.degree (5.31/2.16)
+|   |   |   |   |   month = oct: university.degree (0.0)
+|   |   |   |   |   month = sep: university.degree (0.0)
+|   |   |   age > 49
+|   |   |   |   previous <= 0
+|   |   |   |   |   day_of_week = fri
+|   |   |   |   |   |   marital = divorced: basic.9y (2.0/1.0)
+|   |   |   |   |   |   marital = married: university.degree (4.25/1.25)
+|   |   |   |   |   |   marital = single: university.degree (0.0)
+|   |   |   |   |   day_of_week = mon
+|   |   |   |   |   |   age <= 58: university.degree (4.0/1.0)
+|   |   |   |   |   |   age > 58: high.school (2.0)
+|   |   |   |   |   day_of_week = thu: university.degree (5.27/1.25)
+|   |   |   |   |   day_of_week = tue: high.school (2.25/1.25)
+|   |   |   |   |   day_of_week = wed: high.school (5.0/1.0)
+|   |   |   |   previous > 0
+|   |   |   |   |   campaign <= 1: basic.4y (4.0/2.0)
+|   |   |   |   |   campaign > 1: high.school (2.0)
+|   cons.conf.idx > -36.4
+|   |   cons.conf.idx <= -29.8
+|   |   |   age <= 43: university.degree (70.23/3.0)
+|   |   |   age > 43
+|   |   |   |   age <= 44: high.school (3.0)
+|   |   |   |   age > 44: university.degree (26.73/11.5)
+|   |   cons.conf.idx > -29.8: high.school (2.01/0.01)
+job = blue-collar
+|   age <= 39
+|   |   marital = divorced: basic.9y (9.44/2.44)
+|   |   marital = married
+|   |   |   poutcome = failure: basic.9y (11.56/5.0)
+|   |   |   poutcome = nonexistent
+|   |   |   |   month = apr: basic.9y (6.0/4.0)
+|   |   |   |   month = aug: basic.9y (0.0)
+|   |   |   |   month = dec: high.school (1.0)
+|   |   |   |   month = jul
+|   |   |   |   |   euribor3m <= 4.961
+|   |   |   |   |   |   age <= 25: basic.4y (3.0/2.0)
+|   |   |   |   |   |   age > 25: basic.9y (14.0/4.0)
+|   |   |   |   |   euribor3m > 4.961
+|   |   |   |   |   |   day_of_week = fri: basic.6y (1.0)
+|   |   |   |   |   |   day_of_week = mon: high.school (4.0/2.0)
+|   |   |   |   |   |   day_of_week = thu: basic.6y (4.0/1.0)
+|   |   |   |   |   |   day_of_week = tue: basic.6y (0.0)
+|   |   |   |   |   |   day_of_week = wed
+|   |   |   |   |   |   |   duration <= 137: high.school (3.0/1.0)
+|   |   |   |   |   |   |   duration > 137: basic.9y (3.0)
+|   |   |   |   month = jun
+|   |   |   |   |   age <= 35
+|   |   |   |   |   |   age <= 31: basic.6y (3.0)
+|   |   |   |   |   |   age > 31: basic.9y (12.0/4.0)
+|   |   |   |   |   age > 35
+|   |   |   |   |   |   duration <= 328: professional.course (4.0/1.0)
+|   |   |   |   |   |   duration > 328: basic.9y (3.0/1.0)
+|   |   |   |   month = mar: high.school (1.0)
+|   |   |   |   month = may
+|   |   |   |   |   day_of_week = fri
+|   |   |   |   |   |   contact = cell: basic.9y (0.0)
+|   |   |   |   |   |   contact = cellular: basic.9y (3.0)
+|   |   |   |   |   |   contact = telephone
+|   |   |   |   |   |   |   age <= 32: basic.4y (2.0/1.0)
+|   |   |   |   |   |   |   age > 32: basic.6y (3.0)
+|   |   |   |   |   day_of_week = mon
+|   |   |   |   |   |   duration <= 239: basic.6y (2.0)
+|   |   |   |   |   |   duration > 239: basic.4y (3.0/2.0)
+|   |   |   |   |   day_of_week = thu
+|   |   |   |   |   |   duration <= 94: basic.4y (2.0)
+|   |   |   |   |   |   duration > 94
+|   |   |   |   |   |   |   contact = cell: basic.9y (0.0)
+|   |   |   |   |   |   |   contact = cellular: basic.9y (2.0/1.0)
+|   |   |   |   |   |   |   contact = telephone
+|   |   |   |   |   |   |   |   age <= 27: basic.9y (2.0)
+|   |   |   |   |   |   |   |   age > 27: basic.6y (4.22/1.22)
+|   |   |   |   |   day_of_week = tue: basic.9y (6.0/1.0)
+|   |   |   |   |   day_of_week = wed
+|   |   |   |   |   |   campaign <= 3: basic.6y (16.0/7.0)
+|   |   |   |   |   |   campaign > 3: high.school (2.0/1.0)
+|   |   |   |   month = nov
+|   |   |   |   |   campaign <= 1: basic.4y (3.0/1.0)
+|   |   |   |   |   campaign > 1: basic.6y (3.0/1.0)
+|   |   |   |   month = oct: basic.6y (2.0/1.0)
+|   |   |   |   month = sep: basic.9y (0.0)
+|   |   |   poutcome = success: basic.9y (3.0)
+|   |   marital = single
+|   |   |   previous <= 0
+|   |   |   |   contact = cell: basic.9y (0.0)
+|   |   |   |   contact = cellular
+|   |   |   |   |   month = apr: basic.9y (1.0)
+|   |   |   |   |   month = aug: basic.9y (0.0)
+|   |   |   |   |   month = dec: basic.9y (0.0)
+|   |   |   |   |   month = jul
+|   |   |   |   |   |   euribor3m <= 4.958: high.school (3.0/1.0)
+|   |   |   |   |   |   euribor3m > 4.958: basic.9y (13.0/4.0)
+|   |   |   |   |   month = jun: basic.9y (0.0)
+|   |   |   |   |   month = mar: basic.9y (0.0)
+|   |   |   |   |   month = may: high.school (14.0/7.0)
+|   |   |   |   |   month = nov
+|   |   |   |   |   |   duration <= 91: basic.9y (4.0/1.0)
+|   |   |   |   |   |   duration > 91: basic.4y (2.0)
+|   |   |   |   |   month = oct: basic.9y (1.0)
+|   |   |   |   |   month = sep: basic.9y (0.0)
+|   |   |   |   contact = telephone
+|   |   |   |   |   day_of_week = fri
+|   |   |   |   |   |   housing = no: basic.6y (3.0/1.0)
+|   |   |   |   |   |   housing = yes: basic.4y (2.0)
+|   |   |   |   |   day_of_week = mon: basic.9y (6.0/2.0)
+|   |   |   |   |   day_of_week = thu: basic.9y (3.0)
+|   |   |   |   |   day_of_week = tue
+|   |   |   |   |   |   age <= 31: basic.6y (2.0)
+|   |   |   |   |   |   age > 31: basic.9y (2.0)
+|   |   |   |   |   day_of_week = wed: basic.9y (7.0/1.0)
+|   |   |   previous > 0
+|   |   |   |   campaign <= 2
+|   |   |   |   |   age <= 34: basic.9y (4.22/1.22)
+|   |   |   |   |   age > 34: basic.6y (2.0)
+|   |   |   |   campaign > 2: basic.4y (2.0)
+|   age > 39
+|   |   pdays <= 7: basic.6y (3.22/1.22)
+|   |   pdays > 7
+|   |   |   campaign <= 5
+|   |   |   |   marital = divorced
+|   |   |   |   |   age <= 48: basic.9y (10.0/4.0)
+|   |   |   |   |   age > 48: basic.4y (12.0/2.0)
+|   |   |   |   marital = married
+|   |   |   |   |   cons.price.idx <= 92.963
+|   |   |   |   |   |   day_of_week = fri: high.school (4.0/2.0)
+|   |   |   |   |   |   day_of_week = mon: basic.4y (3.0)
+|   |   |   |   |   |   day_of_week = thu: professional.course (1.22/0.22)
+|   |   |   |   |   |   day_of_week = tue: basic.6y (5.34/3.34)
+|   |   |   |   |   |   day_of_week = wed: basic.4y (7.22/3.22)
+|   |   |   |   |   cons.price.idx > 92.963
+|   |   |   |   |   |   euribor3m <= 4.858
+|   |   |   |   |   |   |   housing = no: basic.9y (18.27/8.0)
+|   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   euribor3m <= 4.856: basic.4y (12.0/6.0)
+|   |   |   |   |   |   |   |   euribor3m > 4.856
+|   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   age <= 44: basic.4y (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 44: professional.course (3.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   campaign <= 2: basic.9y (2.22/0.22)
+|   |   |   |   |   |   |   |   |   |   campaign > 2: basic.6y (3.0/1.0)
+|   |   |   |   |   |   euribor3m > 4.858: basic.4y (59.49/24.44)
+|   |   |   |   marital = single
+|   |   |   |   |   cons.price.idx <= 94.215
+|   |   |   |   |   |   contact = cell: basic.4y (0.0)
+|   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   duration <= 124: basic.4y (3.0/1.0)
+|   |   |   |   |   |   |   duration > 124: basic.9y (4.22/1.22)
+|   |   |   |   |   |   contact = telephone: basic.4y (4.0)
+|   |   |   |   |   cons.price.idx > 94.215: basic.9y (2.22/1.0)
+|   |   |   campaign > 5
+|   |   |   |   euribor3m <= 4.859: basic.9y (2.0)
+|   |   |   |   euribor3m > 4.859: high.school (6.0/3.0)
+job = entrepreneur
+|   poutcome = failure
+|   |   nr.employed <= 5099.1: university.degree (3.12/2.08)
+|   |   nr.employed > 5099.1: high.school (2.0)
+|   poutcome = nonexistent
+|   |   marital = divorced
+|   |   |   cons.conf.idx <= -39.8
+|   |   |   |   cons.price.idx <= 93.444: university.degree (4.0/1.0)
+|   |   |   |   cons.price.idx > 93.444: professional.course (2.0)
+|   |   |   cons.conf.idx > -39.8: high.school (2.08)
+|   |   marital = married: university.degree (48.19/24.16)
+|   |   marital = single
+|   |   |   contact = cell: basic.6y (0.0)
+|   |   |   contact = cellular: university.degree (2.04/0.04)
+|   |   |   contact = telephone: basic.6y (3.04/0.04)
+|   poutcome = success: basic.9y (1.04/0.04)
+job = housemaid
+|   marital = divorced
+|   |   age <= 46: university.degree (4.05/2.05)
+|   |   age > 46: basic.4y (5.0/1.0)
+|   marital = married: basic.4y (20.18/7.16)
+|   marital = single
+|   |   age <= 31: high.school (4.02/2.02)
+|   |   age > 31: university.degree (6.05/1.05)
+job = management: university.degree (134.01/35.85)
+job = retired
+|   poutcome = failure
+|   |   marital = divorced: basic.4y (2.0/1.0)
+|   |   marital = married: university.degree (7.09/2.09)
+|   |   marital = single: university.degree (0.04)
+|   poutcome = nonexistent
+|   |   day_of_week = fri: basic.4y (9.04/5.04)
+|   |   day_of_week = mon
+|   |   |   month = apr: basic.6y (1.0)
+|   |   |   month = aug: professional.course (1.0)
+|   |   |   month = dec: basic.6y (0.0)
+|   |   |   month = jul: basic.4y (4.0/2.0)
+|   |   |   month = jun: basic.6y (1.04/0.04)
+|   |   |   month = mar: basic.6y (0.0)
+|   |   |   month = may
+|   |   |   |   marital = divorced: high.school (0.04)
+|   |   |   |   marital = married
+|   |   |   |   |   age <= 57: high.school (2.04)
+|   |   |   |   |   age > 57: basic.4y (2.0/1.0)
+|   |   |   |   marital = single: basic.9y (2.0/1.0)
+|   |   |   month = nov: university.degree (1.0)
+|   |   |   month = oct: university.degree (1.0)
+|   |   |   month = sep: high.school (1.0)
+|   |   day_of_week = thu
+|   |   |   marital = divorced: basic.4y (0.0)
+|   |   |   marital = married
+|   |   |   |   loan = no
+|   |   |   |   |   campaign <= 2: basic.9y (3.79/1.74)
+|   |   |   |   |   campaign > 2: professional.course (3.74/1.74)
+|   |   |   |   loan = yes: basic.4y (2.6/0.3)
+|   |   |   marital = single: high.school (2.0)
+|   |   day_of_week = tue: basic.4y (15.04/9.0)
+|   |   day_of_week = wed
+|   |   |   month = apr: basic.4y (0.0)
+|   |   |   month = aug: basic.4y (2.0)
+|   |   |   month = dec: basic.4y (0.0)
+|   |   |   month = jul: professional.course (1.0)
+|   |   |   month = jun: professional.course (1.0)
+|   |   |   month = mar: basic.4y (1.0)
+|   |   |   month = may
+|   |   |   |   marital = divorced: professional.course (2.04/0.04)
+|   |   |   |   marital = married: basic.9y (3.0/1.0)
+|   |   |   |   marital = single: basic.9y (0.0)
+|   |   |   month = nov: basic.4y (0.0)
+|   |   |   month = oct: basic.4y (0.0)
+|   |   |   month = sep: basic.4y (0.0)
+|   poutcome = success: basic.4y (6.04/2.04)
+job = self-employed
+|   day_of_week = fri: university.degree (7.04/0.04)
+|   day_of_week = mon
+|   |   duration <= 78: basic.9y (2.08/0.04)
+|   |   duration > 78
+|   |   |   housing = no: university.degree (6.0)
+|   |   |   housing = yes
+|   |   |   |   campaign <= 3: university.degree (3.04/1.04)
+|   |   |   |   campaign > 3: professional.course (2.0)
+|   day_of_week = thu
+|   |   contact = cell: university.degree (0.0)
+|   |   contact = cellular
+|   |   |   housing = no
+|   |   |   |   duration <= 253: university.degree (3.08/1.08)
+|   |   |   |   duration > 253: basic.9y (2.0)
+|   |   |   housing = yes
+|   |   |   |   loan = no: high.school (3.04/1.04)
+|   |   |   |   loan = yes: basic.9y (2.0)
+|   |   contact = telephone: university.degree (4.08/0.04)
+|   day_of_week = tue
+|   |   contact = cell: high.school (0.0)
+|   |   contact = cellular
+|   |   |   cons.price.idx <= 93.444
+|   |   |   |   euribor3m <= 4.964: high.school (5.08/2.08)
+|   |   |   |   euribor3m > 4.964: university.degree (2.0)
+|   |   |   cons.price.idx > 93.444: professional.course (2.0/1.0)
+|   |   contact = telephone
+|   |   |   housing = no: high.school (2.0/1.0)
+|   |   |   housing = yes: basic.9y (5.0/1.0)
+|   day_of_week = wed
+|   |   age <= 42: university.degree (10.04/2.04)
+|   |   age > 42
+|   |   |   loan = no: basic.9y (3.6/1.6)
+|   |   |   loan = yes: basic.4y (2.44/0.04)
+job = services: high.school (170.28/53.98)
+job = student
+|   age <= 28: high.school (21.02/6.02)
+|   age > 28
+|   |   cons.conf.idx <= -39.8: university.degree (4.06/0.06)
+|   |   cons.conf.idx > -39.8: high.school (2.13/1.08)
+job = technician
+|   month = apr
+|   |   duration <= 90: high.school (3.0)
+|   |   duration > 90
+|   |   |   cons.price.idx <= 93.369
+|   |   |   |   duration <= 701: professional.course (5.0/1.0)
+|   |   |   |   duration > 701: university.degree (2.0)
+|   |   |   cons.price.idx > 93.369: university.degree (2.0)
+|   month = aug
+|   |   cons.price.idx <= 92.756: professional.course (5.0)
+|   |   cons.price.idx > 92.756
+|   |   |   day_of_week = fri: high.school (8.0/5.0)
+|   |   |   day_of_week = mon
+|   |   |   |   age <= 30: high.school (2.0/1.0)
+|   |   |   |   age > 30: professional.course (9.0/2.0)
+|   |   |   day_of_week = thu
+|   |   |   |   age <= 33: university.degree (7.0/1.0)
+|   |   |   |   age > 33: professional.course (6.0)
+|   |   |   day_of_week = tue: high.school (13.0/6.0)
+|   |   |   day_of_week = wed
+|   |   |   |   campaign <= 2
+|   |   |   |   |   campaign <= 1: university.degree (4.0/1.0)
+|   |   |   |   |   campaign > 1: high.school (4.0/1.0)
+|   |   |   |   campaign > 2: university.degree (5.0)
+|   month = dec: high.school (1.16/0.16)
+|   month = jul
+|   |   day_of_week = fri
+|   |   |   euribor3m <= 4.96: professional.course (3.0/1.0)
+|   |   |   euribor3m > 4.96: university.degree (4.0/1.0)
+|   |   day_of_week = mon: university.degree (3.0/1.0)
+|   |   day_of_week = thu
+|   |   |   euribor3m <= 4.962
+|   |   |   |   marital = divorced: high.school (2.0)
+|   |   |   |   marital = married: basic.6y (3.16/2.16)
+|   |   |   |   marital = single: university.degree (2.0)
+|   |   |   euribor3m > 4.962
+|   |   |   |   housing = no
+|   |   |   |   |   campaign <= 3: university.degree (4.0/1.0)
+|   |   |   |   |   campaign > 3: professional.course (2.0)
+|   |   |   |   housing = yes: professional.course (5.0)
+|   |   day_of_week = tue: professional.course (11.0/3.0)
+|   |   day_of_week = wed
+|   |   |   campaign <= 4
+|   |   |   |   age <= 32: university.degree (8.0/1.0)
+|   |   |   |   age > 32: basic.9y (6.0/3.0)
+|   |   |   campaign > 4
+|   |   |   |   housing = no: high.school (2.0)
+|   |   |   |   housing = yes: professional.course (2.0)
+|   month = jun
+|   |   contact = cell: professional.course (0.0)
+|   |   contact = cellular: university.degree (8.32/3.16)
+|   |   contact = telephone
+|   |   |   age <= 50
+|   |   |   |   age <= 29: university.degree (2.0)
+|   |   |   |   age > 29: professional.course (12.16/1.16)
+|   |   |   age > 50: university.degree (4.0/1.0)
+|   month = mar: professional.course (3.0)
+|   month = may
+|   |   day_of_week = fri: professional.course (15.16/2.16)
+|   |   day_of_week = mon
+|   |   |   marital = divorced: professional.course (1.16/0.16)
+|   |   |   marital = married
+|   |   |   |   housing = no
+|   |   |   |   |   age <= 48: professional.course (4.0/1.0)
+|   |   |   |   |   age > 48: university.degree (2.0)
+|   |   |   |   housing = yes
+|   |   |   |   |   duration <= 164: basic.9y (2.0)
+|   |   |   |   |   duration > 164: university.degree (3.16/1.16)
+|   |   |   marital = single: professional.course (7.0/1.0)
+|   |   day_of_week = thu
+|   |   |   age <= 31: high.school (5.0/1.0)
+|   |   |   age > 31: professional.course (7.32/2.32)
+|   |   day_of_week = tue
+|   |   |   contact = cell: professional.course (0.0)
+|   |   |   contact = cellular: high.school (3.16/1.16)
+|   |   |   contact = telephone
+|   |   |   |   loan = no: professional.course (19.8/5.0)
+|   |   |   |   loan = yes: basic.6y (2.2/1.2)
+|   |   day_of_week = wed
+|   |   |   campaign <= 1: university.degree (7.0/3.0)
+|   |   |   campaign > 1
+|   |   |   |   duration <= 151: university.degree (4.16/1.16)
+|   |   |   |   duration > 151: professional.course (7.0)
+|   month = nov
+|   |   day_of_week = fri
+|   |   |   age <= 39: high.school (2.0/1.0)
+|   |   |   age > 39: university.degree (3.0/1.0)
+|   |   day_of_week = mon
+|   |   |   age <= 40: university.degree (2.0)
+|   |   |   age > 40: professional.course (2.0)
+|   |   day_of_week = thu: professional.course (4.0/2.0)
+|   |   day_of_week = tue: professional.course (1.0)
+|   |   day_of_week = wed
+|   |   |   previous <= 0: university.degree (4.0)
+|   |   |   previous > 0: basic.9y (2.16)
+|   month = oct: university.degree (4.0)
+|   month = sep: university.degree (4.0/1.0)
+job = unemployed
+|   poutcome = failure: basic.6y (3.09/1.09)
+|   poutcome = nonexistent
+|   |   month = apr: basic.9y (1.0)
+|   |   month = aug: university.degree (3.0/1.0)
+|   |   month = dec: university.degree (0.0)
+|   |   month = jul
+|   |   |   loan = no
+|   |   |   |   duration <= 420: high.school (4.7)
+|   |   |   |   duration > 420: basic.4y (3.0/1.0)
+|   |   |   loan = yes: university.degree (3.33/1.33)
+|   |   month = jun
+|   |   |   campaign <= 2: university.degree (7.0/4.0)
+|   |   |   campaign > 2: basic.9y (2.03/1.0)
+|   |   month = mar: university.degree (0.0)
+|   |   month = may: university.degree (13.22/7.19)
+|   |   month = nov
+|   |   |   campaign <= 2
+|   |   |   |   age <= 34: high.school (2.0/1.0)
+|   |   |   |   age > 34: university.degree (3.0)
+|   |   |   campaign > 2: basic.4y (2.0/1.0)
+|   |   month = oct: basic.9y (1.0)
+|   |   month = sep: basic.4y (2.0/1.0)
+|   poutcome = success: basic.9y (3.03/2.03)
+
+Number of Leaves  : 	305
+
+Size of the tree : 	470
+
+
+Time taken to build model: 0.17 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         816               47.1404 %
+Incorrectly Classified Instances       915               52.8596 %
+Kappa statistic                          0.3193
+Mean absolute error                      0.1729
+Root mean squared error                  0.338 
+Relative absolute error                 76.6024 %
+Root relative squared error            100.6249 %
+Total Number of Instances             1731     
+Ignored Class Unknown Instances                 96     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.001    0.000      0.000    0.000      -0.002   0.437     0.002     
+                 0.360    0.086    0.335      0.360    0.347      0.266    0.696     0.227     basic.4y
+                 0.136    0.030    0.234      0.136    0.172      0.137    0.630     0.123     basic.6y
+                 0.282    0.099    0.338      0.282    0.308      0.198    0.642     0.238     basic.9y
+                 0.481    0.158    0.490      0.481    0.485      0.325    0.667     0.366     high.school
+                 0.388    0.064    0.452      0.388    0.418      0.347    0.705     0.298     professional.course
+                 0.695    0.237    0.575      0.695    0.629      0.438    0.756     0.536     university.degree
+Weighted Avg.    0.471    0.147    0.455      0.471    0.460      0.325    0.696     0.361     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+   0   0   0   0   3   0   1 |   a = 
+   0  67  16  36  19  14  34 |   b = basic.4y
+   0  29  15  34  17   3  12 |   c = basic.6y
+   0  43  20  74  56  14  55 |   d = basic.9y
+   0  28   4  37 200  25 122 |   e = high.school
+   0  17   7  16  29  80  57 |   f = professional.course
+   2  16   2  22  84  41 380 |   g = university.degree
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     R_data_frame-weka.filters.unsupervised.attribute.Reorder-R1,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,4
+Instances:     unknown (yet). Reading incrementally
+Attributes:   18
+
+=== Predictions on user test set ===
+
+inst#,actual,predicted,error,prediction
+1,4:basic.9y,4:basic.9y,,1
+2,5:high.school,5:high.school,,0.683
+3,5:high.school,5:high.school,,0.683
+4,4:basic.9y,5:high.school,+,0.683
+5,2:basic.4y,2:basic.4y,,0.589
+6,4:basic.9y,4:basic.9y,,0.857
+7,3:basic.6y,3:basic.6y,,0.563
+8,5:high.school,7:university.degree,+,0.732
+9,1:?,7:university.degree,,0.571
+10,1:?,5:high.school,,0.714
+11,5:high.school,5:high.school,,0.683
+12,1:?,5:high.school,,0.606
+13,4:basic.9y,4:basic.9y,,0.667
+14,7:university.degree,7:university.degree,,0.705
+15,6:professional.course,6:professional.course,,1
+16,2:basic.4y,2:basic.4y,,0.645
+17,7:university.degree,7:university.degree,,0.732
+18,7:university.degree,7:university.degree,,0.8
+19,5:high.school,5:high.school,,0.683
+20,7:university.degree,7:university.degree,,0.995
+21,5:high.school,5:high.school,,0.455
+22,7:university.degree,7:university.degree,,0.732
+23,7:university.degree,7:university.degree,,0.957
+24,3:basic.6y,4:basic.9y,+,0.6
+25,7:university.degree,7:university.degree,,0.673
+26,7:university.degree,7:university.degree,,0.991
+27,4:basic.9y,4:basic.9y,,0.508
+28,7:university.degree,5:high.school,+,0.538
+29,6:professional.course,6:professional.course,,0.8
+30,5:high.school,7:university.degree,+,0.673
+31,2:basic.4y,5:high.school,+,0.683
+32,7:university.degree,2:basic.4y,+,0.662
+33,7:university.degree,7:university.degree,,0.75
+34,7:university.degree,7:university.degree,,0.75
+35,7:university.degree,7:university.degree,,1
+36,3:basic.6y,5:high.school,+,0.667
+37,5:high.school,5:high.school,,1
+38,4:basic.9y,4:basic.9y,,0.565
+39,5:high.school,2:basic.4y,+,0.589
+40,7:university.degree,7:university.degree,,0.995
+41,3:basic.6y,3:basic.6y,,1
+42,6:professional.course,7:university.degree,+,0.732
+43,3:basic.6y,2:basic.4y,+,0.5
+44,6:professional.course,6:professional.course,,1
+45,7:university.degree,7:university.degree,,0.732
+46,1:?,7:university.degree,,0.825
+47,7:university.degree,7:university.degree,,0.732
+48,5:high.school,5:high.school,,0.444
+49,5:high.school,5:high.school,,0.683
+50,1:?,7:university.degree,,0.824
+51,4:basic.9y,5:high.school,+,0.683
+52,5:high.school,5:high.school,,0.683
+53,6:professional.course,7:university.degree,+,0.499
+54,3:basic.6y,3:basic.6y,,0.75
+55,4:basic.9y,4:basic.9y,,0.667
+56,7:university.degree,7:university.degree,,0.732
+57,1:'',7:university.degree,+,0.57
+58,2:basic.4y,2:basic.4y,,0.589
+59,3:basic.6y,3:basic.6y,,1
+60,7:university.degree,7:university.degree,,0.732
+61,7:university.degree,7:university.degree,,0.673
+62,3:basic.6y,7:university.degree,+,0.732
+63,5:high.school,5:high.school,,0.683
+64,5:high.school,5:high.school,,0.5
+65,4:basic.9y,4:basic.9y,,0.667
+66,6:professional.course,7:university.degree,+,0.797
+67,4:basic.9y,4:basic.9y,,0.742
+68,5:high.school,5:high.school,,0.683
+69,6:professional.course,5:high.school,+,0.5
+70,2:basic.4y,7:university.degree,+,0.499
+71,4:basic.9y,4:basic.9y,,0.5
+72,4:basic.9y,4:basic.9y,,0.567
+73,4:basic.9y,7:university.degree,+,0.57
+74,1:?,7:university.degree,,0.797
+75,7:university.degree,7:university.degree,,0.732
+76,7:university.degree,7:university.degree,,0.732
+77,6:professional.course,5:high.school,+,0.683
+78,6:professional.course,6:professional.course,,0.778
+79,7:university.degree,5:high.school,+,0.602
+80,7:university.degree,7:university.degree,,0.91
+81,6:professional.course,7:university.degree,+,0.571
+82,6:professional.course,6:professional.course,,0.727
+83,6:professional.course,6:professional.course,,1
+84,5:high.school,5:high.school,,0.621
+85,1:'',5:high.school,+,0.683
+86,4:basic.9y,2:basic.4y,+,0.5
+87,5:high.school,5:high.school,,0.683
+88,4:basic.9y,6:professional.course,+,0.683
+89,4:basic.9y,7:university.degree,+,0.248
+90,7:university.degree,7:university.degree,,0.957
+91,2:basic.4y,4:basic.9y,+,0.714
+92,5:high.school,4:basic.9y,+,0.5
+93,7:university.degree,7:university.degree,,0.75
+94,2:basic.4y,2:basic.4y,,0.589
+95,4:basic.9y,4:basic.9y,,1
+96,1:?,5:high.school,,0.683
+97,1:?,6:professional.course,,0.727
+98,5:high.school,5:high.school,,0.602
+99,5:high.school,5:high.school,,0.5
+100,1:'',7:university.degree,+,0.91
+101,5:high.school,7:university.degree,+,0.9
+102,5:high.school,7:university.degree,+,0.91
+103,5:high.school,5:high.school,,0.683
+104,7:university.degree,7:university.degree,,0.824
+105,2:basic.4y,2:basic.4y,,0.833
+106,5:high.school,5:high.school,,0.683
+107,5:high.school,5:high.school,,1
+108,6:professional.course,4:basic.9y,+,0.562
+109,7:university.degree,7:university.degree,,0.957
+110,6:professional.course,5:high.school,+,0.683
+111,5:high.school,5:high.school,,0.683
+112,6:professional.course,6:professional.course,,0.857
+113,7:university.degree,7:university.degree,,1
+114,4:basic.9y,4:basic.9y,,0.901
+115,6:professional.course,4:basic.9y,+,0.5
+116,7:university.degree,7:university.degree,,0.732
+117,7:university.degree,7:university.degree,,0.499
+118,1:?,7:university.degree,,0.75
+119,2:basic.4y,7:university.degree,+,0.732
+120,5:high.school,5:high.school,,1
+121,7:university.degree,7:university.degree,,0.732
+122,5:high.school,5:high.school,,1
+123,5:high.school,5:high.school,,0.591
+124,3:basic.6y,2:basic.4y,+,0.589
+125,4:basic.9y,4:basic.9y,,0.75
+126,2:basic.4y,2:basic.4y,,0.645
+127,6:professional.course,6:professional.course,,0.904
+128,4:basic.9y,5:high.school,+,0.683
+129,3:basic.6y,4:basic.9y,+,0.567
+130,4:basic.9y,4:basic.9y,,0.504
+131,6:professional.course,6:professional.course,,0.747
+132,7:university.degree,7:university.degree,,0.571
+133,7:university.degree,7:university.degree,,0.985
+134,5:high.school,5:high.school,,0.714
+135,4:basic.9y,4:basic.9y,,0.667
+136,7:university.degree,7:university.degree,,0.995
+137,4:basic.9y,5:high.school,+,0.683
+138,5:high.school,5:high.school,,0.64
+139,3:basic.6y,4:basic.9y,+,0.857
+140,2:basic.4y,7:university.degree,+,0.732
+141,7:university.degree,7:university.degree,,0.732
+142,6:professional.course,5:high.school,+,0.683
+143,1:?,3:basic.6y,,0.563
+144,7:university.degree,7:university.degree,,0.499
+145,5:high.school,5:high.school,,0.683
+146,6:professional.course,6:professional.course,,0.727
+147,4:basic.9y,4:basic.9y,,0.6
+148,7:university.degree,7:university.degree,,1
+149,7:university.degree,5:high.school,+,0.683
+150,7:university.degree,7:university.degree,,0.732
+151,7:university.degree,7:university.degree,,0.957
+152,4:basic.9y,4:basic.9y,,0.562
+153,4:basic.9y,2:basic.4y,+,0.442
+154,5:high.school,5:high.school,,0.714
+155,7:university.degree,7:university.degree,,0.981
+156,6:professional.course,5:high.school,+,0.621
+157,3:basic.6y,7:university.degree,+,0.732
+158,1:?,5:high.school,,0.5
+159,6:professional.course,6:professional.course,,0.857
+160,2:basic.4y,2:basic.4y,,0.402
+161,2:basic.4y,3:basic.6y,+,0.563
+162,4:basic.9y,7:university.degree,+,0.262
+163,1:?,2:basic.4y,,0.5
+164,5:high.school,5:high.school,,0.683
+165,1:?,4:basic.9y,,0.508
+166,2:basic.4y,2:basic.4y,,0.442
+167,4:basic.9y,4:basic.9y,,0.714
+168,3:basic.6y,5:high.school,+,0.5
+169,5:high.school,5:high.school,,0.683
+170,2:basic.4y,7:university.degree,+,0.332
+171,4:basic.9y,4:basic.9y,,0.562
+172,6:professional.course,6:professional.course,,1
+173,5:high.school,5:high.school,,0.683
+174,7:university.degree,7:university.degree,,0.732
+175,6:professional.course,6:professional.course,,0.683
+176,3:basic.6y,4:basic.9y,+,0.6
+177,7:university.degree,7:university.degree,,0.827
+178,4:basic.9y,4:basic.9y,,0.5
+179,4:basic.9y,4:basic.9y,,1
+180,5:high.school,5:high.school,,0.804
+181,7:university.degree,7:university.degree,,0.57
+182,7:university.degree,7:university.degree,,0.957
+183,6:professional.course,6:professional.course,,1
+184,1:?,7:university.degree,,0.732
+185,7:university.degree,7:university.degree,,1
+186,7:university.degree,7:university.degree,,0.732
+187,5:high.school,5:high.school,,0.804
+188,1:?,2:basic.4y,,0.5
+189,5:high.school,5:high.school,,0.621
+190,7:university.degree,7:university.degree,,0.797
+191,4:basic.9y,6:professional.course,+,0.727
+192,7:university.degree,7:university.degree,,0.957
+193,5:high.school,5:high.school,,0.683
+194,7:university.degree,7:university.degree,,0.429
+195,5:high.school,5:high.school,,1
+196,2:basic.4y,2:basic.4y,,0.589
+197,5:high.school,2:basic.4y,+,0.645
+198,7:university.degree,7:university.degree,,0.957
+199,3:basic.6y,6:professional.course,+,0.667
+200,2:basic.4y,2:basic.4y,,0.402
+201,5:high.school,5:high.school,,0.683
+202,5:high.school,5:high.school,,1
+203,5:high.school,5:high.school,,0.683
+204,2:basic.4y,2:basic.4y,,0.589
+205,7:university.degree,5:high.school,+,0.794
+206,4:basic.9y,5:high.school,+,0.714
+207,7:university.degree,7:university.degree,,0.499
+208,2:basic.4y,2:basic.4y,,0.667
+209,2:basic.4y,7:university.degree,+,0.732
+210,7:university.degree,7:university.degree,,1
+211,4:basic.9y,4:basic.9y,,0.556
+212,5:high.school,7:university.degree,+,0.632
+213,5:high.school,5:high.school,,0.497
+214,4:basic.9y,2:basic.4y,+,0.5
+215,3:basic.6y,3:basic.6y,,1
+216,3:basic.6y,3:basic.6y,,0.711
+217,4:basic.9y,4:basic.9y,,0.857
+218,6:professional.course,4:basic.9y,+,0.5
+219,7:university.degree,7:university.degree,,0.732
+220,2:basic.4y,2:basic.4y,,0.526
+221,7:university.degree,7:university.degree,,0.732
+222,7:university.degree,5:high.school,+,0.602
+223,4:basic.9y,4:basic.9y,,0.711
+224,1:?,6:professional.course,,0.683
+225,7:university.degree,7:university.degree,,0.456
+226,6:professional.course,6:professional.course,,0.683
+227,7:university.degree,7:university.degree,,0.499
+228,5:high.school,5:high.school,,0.621
+229,7:university.degree,7:university.degree,,0.797
+230,1:?,2:basic.4y,,0.667
+231,1:?,2:basic.4y,,0.833
+232,7:university.degree,7:university.degree,,0.673
+233,7:university.degree,7:university.degree,,1
+234,7:university.degree,7:university.degree,,0.957
+235,7:university.degree,7:university.degree,,0.707
+236,7:university.degree,7:university.degree,,0.721
+237,5:high.school,7:university.degree,+,0.75
+238,2:basic.4y,2:basic.4y,,0.402
+239,5:high.school,4:basic.9y,+,0.667
+240,7:university.degree,7:university.degree,,0.75
+241,7:university.degree,7:university.degree,,0.763
+242,4:basic.9y,7:university.degree,+,0.499
+243,4:basic.9y,4:basic.9y,,1
+244,3:basic.6y,7:university.degree,+,0.494
+245,7:university.degree,7:university.degree,,0.673
+246,5:high.school,5:high.school,,0.683
+247,5:high.school,3:basic.6y,+,0.563
+248,7:university.degree,7:university.degree,,0.824
+249,7:university.degree,7:university.degree,,0.824
+250,6:professional.course,6:professional.course,,0.727
+251,5:high.school,5:high.school,,0.683
+252,7:university.degree,7:university.degree,,0.957
+253,7:university.degree,7:university.degree,,0.715
+254,7:university.degree,5:high.school,+,0.5
+255,7:university.degree,7:university.degree,,0.499
+256,7:university.degree,7:university.degree,,0.732
+257,3:basic.6y,4:basic.9y,+,0.742
+258,7:university.degree,7:university.degree,,0.333
+259,5:high.school,5:high.school,,1
+260,7:university.degree,7:university.degree,,0.456
+261,6:professional.course,6:professional.course,,0.86
+262,5:high.school,5:high.school,,0.538
+263,3:basic.6y,5:high.school,+,0.683
+264,4:basic.9y,5:high.school,+,0.683
+265,1:?,7:university.degree,,0.338
+266,4:basic.9y,3:basic.6y,+,0.374
+267,2:basic.4y,2:basic.4y,,0.984
+268,5:high.school,5:high.school,,0.5
+269,2:basic.4y,2:basic.4y,,0.589
+270,7:university.degree,7:university.degree,,0.57
+271,7:university.degree,7:university.degree,,0.824
+272,4:basic.9y,7:university.degree,+,0.667
+273,7:university.degree,7:university.degree,,1
+274,6:professional.course,6:professional.course,,0.747
+275,3:basic.6y,7:university.degree,+,0.336
+276,7:university.degree,7:university.degree,,0.499
+277,5:high.school,5:high.school,,0.683
+278,5:high.school,5:high.school,,1
+279,7:university.degree,7:university.degree,,0.939
+280,4:basic.9y,5:high.school,+,0.683
+281,7:university.degree,5:high.school,+,0.621
+282,6:professional.course,6:professional.course,,0.75
+283,5:high.school,5:high.school,,1
+284,2:basic.4y,5:high.school,+,0.683
+285,2:basic.4y,4:basic.9y,+,0.562
+286,5:high.school,5:high.school,,0.765
+287,7:university.degree,7:university.degree,,0.732
+288,7:university.degree,7:university.degree,,0.732
+289,3:basic.6y,3:basic.6y,,0.563
+290,7:university.degree,7:university.degree,,0.957
+291,5:high.school,5:high.school,,0.683
+292,2:basic.4y,7:university.degree,+,0.667
+293,4:basic.9y,5:high.school,+,0.5
+294,2:basic.4y,7:university.degree,+,0.732
+295,6:professional.course,6:professional.course,,0.778
+296,6:professional.course,7:university.degree,+,0.499
+297,4:basic.9y,2:basic.4y,+,0.589
+298,7:university.degree,5:high.school,+,0.606
+299,5:high.school,5:high.school,,0.606
+300,4:basic.9y,2:basic.4y,+,0.589
+301,5:high.school,5:high.school,,0.621
+302,1:?,5:high.school,,0.683
+303,1:?,5:high.school,,0.602
+304,2:basic.4y,7:university.degree,+,0.456
+305,5:high.school,5:high.school,,0.683
+306,7:university.degree,6:professional.course,+,0.857
+307,5:high.school,5:high.school,,0.602
+308,5:high.school,4:basic.9y,+,0.667
+309,7:university.degree,7:university.degree,,0.732
+310,7:university.degree,7:university.degree,,1
+311,4:basic.9y,4:basic.9y,,1
+312,5:high.school,5:high.school,,0.75
+313,4:basic.9y,7:university.degree,+,0.57
+314,7:university.degree,7:university.degree,,0.957
+315,4:basic.9y,4:basic.9y,,0.714
+316,5:high.school,7:university.degree,+,0.707
+317,7:university.degree,7:university.degree,,0.995
+318,7:university.degree,7:university.degree,,0.708
+319,7:university.degree,7:university.degree,,0.732
+320,4:basic.9y,4:basic.9y,,0.982
+321,7:university.degree,7:university.degree,,0.857
+322,7:university.degree,5:high.school,+,0.489
+323,6:professional.course,6:professional.course,,1
+324,2:basic.4y,2:basic.4y,,0.662
+325,2:basic.4y,2:basic.4y,,0.589
+326,6:professional.course,6:professional.course,,0.857
+327,3:basic.6y,3:basic.6y,,0.455
+328,2:basic.4y,7:university.degree,+,0.499
+329,1:?,2:basic.4y,,0.589
+330,1:?,3:basic.6y,,0.563
+331,2:basic.4y,2:basic.4y,,0.589
+332,7:university.degree,7:university.degree,,0.939
+333,3:basic.6y,3:basic.6y,,0.667
+334,5:high.school,5:high.school,,1
+335,2:basic.4y,2:basic.4y,,0.554
+336,7:university.degree,7:university.degree,,0.857
+337,2:basic.4y,6:professional.course,+,0.747
+338,7:university.degree,7:university.degree,,0.732
+339,5:high.school,7:university.degree,+,0.824
+340,6:professional.course,6:professional.course,,0.682
+341,5:high.school,5:high.school,,0.714
+342,7:university.degree,7:university.degree,,0.732
+343,4:basic.9y,4:basic.9y,,0.5
+344,6:professional.course,6:professional.course,,0.747
+345,2:basic.4y,2:basic.4y,,0.5
+346,2:basic.4y,2:basic.4y,,0.589
+347,4:basic.9y,4:basic.9y,,0.6
+348,2:basic.4y,2:basic.4y,,0.554
+349,7:university.degree,7:university.degree,,0.499
+350,7:university.degree,7:university.degree,,0.957
+351,7:university.degree,7:university.degree,,0.957
+352,7:university.degree,5:high.school,+,0.621
+353,7:university.degree,7:university.degree,,0.732
+354,7:university.degree,7:university.degree,,1
+355,1:?,4:basic.9y,,1
+356,5:high.school,5:high.school,,0.714
+357,7:university.degree,7:university.degree,,0.732
+358,2:basic.4y,2:basic.4y,,0.5
+359,5:high.school,7:university.degree,+,0.57
+360,2:basic.4y,2:basic.4y,,0.589
+361,5:high.school,7:university.degree,+,0.57
+362,5:high.school,2:basic.4y,+,0.667
+363,5:high.school,5:high.school,,0.683
+364,6:professional.course,6:professional.course,,1
+365,7:university.degree,6:professional.course,+,0.857
+366,2:basic.4y,7:university.degree,+,0.732
+367,7:university.degree,7:university.degree,,0.732
+368,6:professional.course,7:university.degree,+,0.721
+369,6:professional.course,6:professional.course,,0.5
+370,4:basic.9y,4:basic.9y,,0.692
+371,1:?,7:university.degree,,0.499
+372,7:university.degree,7:university.degree,,0.732
+373,7:university.degree,7:university.degree,,1
+374,7:university.degree,7:university.degree,,0.957
+375,7:university.degree,7:university.degree,,0.991
+376,7:university.degree,5:high.school,+,0.683
+377,7:university.degree,7:university.degree,,0.732
+378,7:university.degree,7:university.degree,,0.62
+379,2:basic.4y,2:basic.4y,,0.589
+380,2:basic.4y,2:basic.4y,,0.645
+381,3:basic.6y,7:university.degree,+,0.732
+382,7:university.degree,7:university.degree,,0.351
+383,5:high.school,5:high.school,,0.683
+384,5:high.school,5:high.school,,0.683
+385,7:university.degree,7:university.degree,,0.673
+386,7:university.degree,7:university.degree,,0.857
+387,2:basic.4y,2:basic.4y,,0.589
+388,7:university.degree,7:university.degree,,0.875
+389,7:university.degree,5:high.school,+,0.606
+390,5:high.school,5:high.school,,0.602
+391,1:?,7:university.degree,,0.244
+392,4:basic.9y,4:basic.9y,,1
+393,4:basic.9y,4:basic.9y,,0.55
+394,1:?,7:university.degree,,0.706
+395,2:basic.4y,2:basic.4y,,0.589
+396,4:basic.9y,4:basic.9y,,0.692
+397,7:university.degree,7:university.degree,,0.957
+398,2:basic.4y,5:high.school,+,0.683
+399,2:basic.4y,3:basic.6y,+,0.374
+400,7:university.degree,7:university.degree,,0.732
+401,4:basic.9y,7:university.degree,+,0.499
+402,6:professional.course,6:professional.course,,0.857
+403,5:high.school,5:high.school,,0.667
+404,7:university.degree,7:university.degree,,0.939
+405,3:basic.6y,3:basic.6y,,0.563
+406,7:university.degree,7:university.degree,,0.459
+407,3:basic.6y,7:university.degree,+,0.594
+408,7:university.degree,7:university.degree,,0.732
+409,7:university.degree,7:university.degree,,0.797
+410,2:basic.4y,2:basic.4y,,0.645
+411,6:professional.course,5:high.school,+,0.5
+412,7:university.degree,7:university.degree,,1
+413,1:?,7:university.degree,,0.732
+414,7:university.degree,5:high.school,+,0.375
+415,7:university.degree,7:university.degree,,0.732
+416,3:basic.6y,2:basic.4y,+,0.589
+417,7:university.degree,7:university.degree,,0.9
+418,5:high.school,5:high.school,,0.5
+419,4:basic.9y,2:basic.4y,+,0.589
+420,4:basic.9y,4:basic.9y,,0.711
+421,2:basic.4y,2:basic.4y,,0.833
+422,6:professional.course,5:high.school,+,0.621
+423,7:university.degree,7:university.degree,,0.732
+424,7:university.degree,7:university.degree,,0.995
+425,6:professional.course,5:high.school,+,0.375
+426,7:university.degree,7:university.degree,,0.824
+427,4:basic.9y,5:high.school,+,0.683
+428,7:university.degree,7:university.degree,,0.91
+429,4:basic.9y,4:basic.9y,,0.714
+430,7:university.degree,7:university.degree,,0.957
+431,7:university.degree,7:university.degree,,0.499
+432,4:basic.9y,4:basic.9y,,0.562
+433,5:high.school,5:high.school,,0.386
+434,2:basic.4y,7:university.degree,+,0.499
+435,3:basic.6y,3:basic.6y,,1
+436,6:professional.course,6:professional.course,,1
+437,4:basic.9y,4:basic.9y,,1
+438,6:professional.course,3:basic.6y,+,0.563
+439,4:basic.9y,2:basic.4y,+,0.589
+440,3:basic.6y,4:basic.9y,+,0.711
+441,7:university.degree,7:university.degree,,1
+442,5:high.school,7:university.degree,+,0.732
+443,5:high.school,5:high.school,,0.683
+444,6:professional.course,6:professional.course,,1
+445,7:university.degree,7:university.degree,,0.857
+446,7:university.degree,5:high.school,+,0.455
+447,5:high.school,5:high.school,,0.5
+448,2:basic.4y,2:basic.4y,,0.589
+449,6:professional.course,6:professional.course,,0.857
+450,2:basic.4y,2:basic.4y,,0.833
+451,2:basic.4y,2:basic.4y,,0.589
+452,5:high.school,5:high.school,,1
+453,4:basic.9y,4:basic.9y,,0.8
+454,4:basic.9y,7:university.degree,+,0.456
+455,6:professional.course,6:professional.course,,0.727
+456,5:high.school,5:high.school,,0.714
+457,7:university.degree,7:university.degree,,0.632
+458,7:university.degree,7:university.degree,,0.875
+459,5:high.school,5:high.school,,0.606
+460,7:university.degree,7:university.degree,,0.75
+461,7:university.degree,7:university.degree,,0.732
+462,7:university.degree,7:university.degree,,0.957
+463,7:university.degree,7:university.degree,,0.456
+464,6:professional.course,6:professional.course,,0.904
+465,2:basic.4y,4:basic.9y,+,0.667
+466,6:professional.course,3:basic.6y,+,0.667
+467,6:professional.course,6:professional.course,,0.857
+468,5:high.school,4:basic.9y,+,0.562
+469,3:basic.6y,5:high.school,+,0.667
+470,7:university.degree,7:university.degree,,0.957
+471,4:basic.9y,4:basic.9y,,0.714
+472,2:basic.4y,2:basic.4y,,0.645
+473,5:high.school,5:high.school,,0.683
+474,3:basic.6y,2:basic.4y,+,0.589
+475,7:university.degree,7:university.degree,,0.957
+476,7:university.degree,7:university.degree,,0.91
+477,7:university.degree,7:university.degree,,0.708
+478,4:basic.9y,4:basic.9y,,0.6
+479,4:basic.9y,4:basic.9y,,1
+480,3:basic.6y,5:high.school,+,0.621
+481,4:basic.9y,5:high.school,+,0.683
+482,5:high.school,5:high.school,,1
+483,5:high.school,5:high.school,,0.8
+484,7:university.degree,7:university.degree,,0.571
+485,2:basic.4y,7:university.degree,+,0.732
+486,5:high.school,7:university.degree,+,0.732
+487,6:professional.course,6:professional.course,,1
+488,5:high.school,5:high.school,,0.621
+489,7:university.degree,7:university.degree,,1
+490,5:high.school,5:high.school,,1
+491,7:university.degree,7:university.degree,,1
+492,4:basic.9y,4:basic.9y,,0.742
+493,3:basic.6y,3:basic.6y,,1
+494,7:university.degree,7:university.degree,,1
+495,4:basic.9y,4:basic.9y,,1
+496,5:high.school,5:high.school,,1
+497,7:university.degree,7:university.degree,,0.995
+498,7:university.degree,7:university.degree,,0.875
+499,1:?,5:high.school,,0.493
+500,5:high.school,4:basic.9y,+,0.562
+501,4:basic.9y,7:university.degree,+,0.57
+502,5:high.school,5:high.school,,1
+503,5:high.school,2:basic.4y,+,0.402
+504,7:university.degree,7:university.degree,,0.75
+505,3:basic.6y,3:basic.6y,,1
+506,5:high.school,5:high.school,,1
+507,5:high.school,5:high.school,,0.5
+508,5:high.school,5:high.school,,0.683
+509,5:high.school,5:high.school,,1
+510,1:?,7:university.degree,,0.329
+511,7:university.degree,7:university.degree,,0.75
+512,2:basic.4y,2:basic.4y,,0.589
+513,7:university.degree,7:university.degree,,0.939
+514,7:university.degree,7:university.degree,,0.732
+515,7:university.degree,7:university.degree,,0.732
+516,2:basic.4y,2:basic.4y,,0.333
+517,7:university.degree,7:university.degree,,0.732
+518,6:professional.course,7:university.degree,+,0.732
+519,7:university.degree,7:university.degree,,0.957
+520,5:high.school,5:high.school,,0.75
+521,6:professional.course,6:professional.course,,0.667
+522,4:basic.9y,4:basic.9y,,0.75
+523,7:university.degree,7:university.degree,,0.499
+524,4:basic.9y,3:basic.6y,+,0.563
+525,7:university.degree,7:university.degree,,0.939
+526,6:professional.course,6:professional.course,,1
+527,7:university.degree,7:university.degree,,0.732
+528,7:university.degree,7:university.degree,,0.594
+529,5:high.school,5:high.school,,0.621
+530,7:university.degree,7:university.degree,,0.75
+531,4:basic.9y,4:basic.9y,,0.667
+532,7:university.degree,7:university.degree,,0.494
+533,5:high.school,5:high.school,,0.667
+534,6:professional.course,6:professional.course,,1
+535,3:basic.6y,3:basic.6y,,0.957
+536,1:?,3:basic.6y,,0.667
+537,1:?,2:basic.4y,,0.833
+538,6:professional.course,7:university.degree,+,0.673
+539,5:high.school,5:high.school,,0.5
+540,4:basic.9y,4:basic.9y,,0.6
+541,4:basic.9y,4:basic.9y,,0.901
+542,7:university.degree,7:university.degree,,0.499
+543,5:high.school,5:high.school,,0.683
+544,3:basic.6y,2:basic.4y,+,0.5
+545,7:university.degree,7:university.degree,,0.763
+546,7:university.degree,7:university.degree,,1
+547,7:university.degree,7:university.degree,,0.957
+548,4:basic.9y,4:basic.9y,,0.711
+549,5:high.school,5:high.school,,1
+550,4:basic.9y,5:high.school,+,0.683
+551,2:basic.4y,2:basic.4y,,1
+552,5:high.school,5:high.school,,0.658
+553,4:basic.9y,4:basic.9y,,0.567
+554,2:basic.4y,2:basic.4y,,0.589
+555,5:high.school,5:high.school,,1
+556,7:university.degree,7:university.degree,,0.494
+557,5:high.school,5:high.school,,0.725
+558,7:university.degree,6:professional.course,+,0.534
+559,7:university.degree,7:university.degree,,0.957
+560,2:basic.4y,2:basic.4y,,1
+561,7:university.degree,7:university.degree,,0.632
+562,2:basic.4y,2:basic.4y,,0.589
+563,3:basic.6y,3:basic.6y,,0.711
+564,5:high.school,7:university.degree,+,0.732
+565,7:university.degree,7:university.degree,,0.732
+566,6:professional.course,6:professional.course,,1
+567,7:university.degree,7:university.degree,,0.732
+568,7:university.degree,7:university.degree,,0.499
+569,3:basic.6y,4:basic.9y,+,0.562
+570,4:basic.9y,4:basic.9y,,1
+571,7:university.degree,7:university.degree,,0.797
+572,6:professional.course,5:high.school,+,0.683
+573,5:high.school,5:high.school,,1
+574,7:university.degree,7:university.degree,,0.456
+575,7:university.degree,7:university.degree,,0.62
+576,4:basic.9y,4:basic.9y,,1
+577,7:university.degree,7:university.degree,,0.91
+578,7:university.degree,7:university.degree,,0.57
+579,6:professional.course,6:professional.course,,0.857
+580,2:basic.4y,2:basic.4y,,0.554
+581,4:basic.9y,7:university.degree,+,0.732
+582,7:university.degree,7:university.degree,,1
+583,7:university.degree,7:university.degree,,0.571
+584,3:basic.6y,2:basic.4y,+,0.589
+585,2:basic.4y,2:basic.4y,,0.589
+586,7:university.degree,7:university.degree,,0.985
+587,5:high.school,5:high.school,,0.497
+588,5:high.school,5:high.school,,0.621
+589,2:basic.4y,4:basic.9y,+,0.833
+590,7:university.degree,7:university.degree,,0.707
+591,5:high.school,5:high.school,,0.804
+592,5:high.school,5:high.school,,0.621
+593,2:basic.4y,2:basic.4y,,0.442
+594,7:university.degree,7:university.degree,,0.957
+595,7:university.degree,7:university.degree,,0.763
+596,7:university.degree,7:university.degree,,0.827
+597,5:high.school,5:high.school,,0.714
+598,5:high.school,7:university.degree,+,0.594
+599,7:university.degree,7:university.degree,,0.732
+600,7:university.degree,5:high.school,+,0.621
+601,7:university.degree,7:university.degree,,0.707
+602,5:high.school,5:high.school,,0.683
+603,3:basic.6y,5:high.school,+,0.591
+604,5:high.school,5:high.school,,0.621
+605,2:basic.4y,2:basic.4y,,0.5
+606,7:university.degree,7:university.degree,,0.732
+607,5:high.school,5:high.school,,0.683
+608,6:professional.course,6:professional.course,,1
+609,3:basic.6y,4:basic.9y,+,0.667
+610,7:university.degree,7:university.degree,,0.833
+611,7:university.degree,5:high.school,+,0.5
+612,7:university.degree,7:university.degree,,1
+613,6:professional.course,6:professional.course,,0.747
+614,2:basic.4y,2:basic.4y,,0.554
+615,5:high.school,5:high.school,,0.606
+616,1:?,5:high.school,,0.606
+617,7:university.degree,7:university.degree,,0.673
+618,4:basic.9y,7:university.degree,+,0.732
+619,5:high.school,6:professional.course,+,0.857
+620,5:high.school,5:high.school,,0.5
+621,5:high.school,5:high.school,,0.455
+622,4:basic.9y,6:professional.course,+,0.75
+623,5:high.school,4:basic.9y,+,0.5
+624,7:university.degree,7:university.degree,,0.732
+625,1:?,5:high.school,,0.714
+626,2:basic.4y,2:basic.4y,,1
+627,6:professional.course,5:high.school,+,0.5
+628,1:?,4:basic.9y,,0.667
+629,7:university.degree,7:university.degree,,0.57
+630,5:high.school,5:high.school,,0.621
+631,5:high.school,5:high.school,,0.772
+632,7:university.degree,7:university.degree,,0.9
+633,3:basic.6y,6:professional.course,+,0.8
+634,5:high.school,5:high.school,,1
+635,5:high.school,5:high.school,,0.667
+636,7:university.degree,7:university.degree,,0.957
+637,6:professional.course,6:professional.course,,0.978
+638,4:basic.9y,2:basic.4y,+,0.5
+639,7:university.degree,7:university.degree,,1
+640,6:professional.course,6:professional.course,,0.978
+641,7:university.degree,7:university.degree,,0.957
+642,6:professional.course,6:professional.course,,1
+643,5:high.school,5:high.school,,0.375
+644,7:university.degree,7:university.degree,,1
+645,4:basic.9y,4:basic.9y,,1
+646,4:basic.9y,4:basic.9y,,1
+647,4:basic.9y,3:basic.6y,+,0.75
+648,7:university.degree,7:university.degree,,1
+649,7:university.degree,6:professional.course,+,0.5
+650,5:high.school,5:high.school,,0.704
+651,7:university.degree,5:high.school,+,0.714
+652,2:basic.4y,2:basic.4y,,1
+653,6:professional.course,6:professional.course,,0.778
+654,7:university.degree,7:university.degree,,0.824
+655,6:professional.course,6:professional.course,,0.904
+656,4:basic.9y,4:basic.9y,,1
+657,5:high.school,5:high.school,,0.632
+658,7:university.degree,7:university.degree,,0.875
+659,7:university.degree,2:basic.4y,+,0.442
+660,5:high.school,7:university.degree,+,0.732
+661,6:professional.course,6:professional.course,,1
+662,7:university.degree,7:university.degree,,0.957
+663,6:professional.course,6:professional.course,,0.857
+664,7:university.degree,7:university.degree,,0.75
+665,4:basic.9y,4:basic.9y,,0.6
+666,6:professional.course,6:professional.course,,1
+667,4:basic.9y,7:university.degree,+,0.667
+668,7:university.degree,7:university.degree,,0.91
+669,5:high.school,5:high.school,,0.493
+670,3:basic.6y,2:basic.4y,+,0.554
+671,7:university.degree,7:university.degree,,0.673
+672,7:university.degree,7:university.degree,,0.833
+673,2:basic.4y,2:basic.4y,,0.645
+674,5:high.school,4:basic.9y,+,0.401
+675,4:basic.9y,7:university.degree,+,0.732
+676,7:university.degree,7:university.degree,,0.732
+677,5:high.school,5:high.school,,0.683
+678,7:university.degree,5:high.school,+,0.75
+679,6:professional.course,6:professional.course,,0.8
+680,6:professional.course,6:professional.course,,1
+681,5:high.school,7:university.degree,+,0.673
+682,2:basic.4y,2:basic.4y,,1
+683,7:university.degree,7:university.degree,,0.732
+684,7:university.degree,7:university.degree,,0.9
+685,5:high.school,5:high.school,,0.683
+686,2:basic.4y,2:basic.4y,,0.667
+687,6:professional.course,5:high.school,+,0.683
+688,5:high.school,7:university.degree,+,0.957
+689,7:university.degree,7:university.degree,,0.707
+690,6:professional.course,6:professional.course,,0.5
+691,5:high.school,5:high.school,,0.683
+692,7:university.degree,7:university.degree,,0.57
+693,4:basic.9y,5:high.school,+,0.683
+694,2:basic.4y,2:basic.4y,,0.8
+695,4:basic.9y,4:basic.9y,,1
+696,7:university.degree,7:university.degree,,1
+697,7:university.degree,7:university.degree,,0.75
+698,2:basic.4y,2:basic.4y,,0.589
+699,6:professional.course,6:professional.course,,0.82
+700,6:professional.course,6:professional.course,,0.857
+701,7:university.degree,7:university.degree,,0.91
+702,7:university.degree,7:university.degree,,0.57
+703,5:high.school,6:professional.course,+,0.747
+704,2:basic.4y,4:basic.9y,+,0.667
+705,6:professional.course,6:professional.course,,0.857
+706,3:basic.6y,3:basic.6y,,1
+707,7:university.degree,7:university.degree,,0.957
+708,2:basic.4y,2:basic.4y,,0.589
+709,2:basic.4y,7:university.degree,+,0.499
+710,7:university.degree,7:university.degree,,0.57
+711,2:basic.4y,2:basic.4y,,1
+712,4:basic.9y,4:basic.9y,,0.742
+713,7:university.degree,7:university.degree,,0.732
+714,5:high.school,5:high.school,,0.8
+715,1:?,7:university.degree,,0.732
+716,7:university.degree,7:university.degree,,0.957
+717,2:basic.4y,2:basic.4y,,0.589
+718,7:university.degree,7:university.degree,,0.91
+719,6:professional.course,2:basic.4y,+,0.5
+720,2:basic.4y,2:basic.4y,,0.589
+721,1:?,7:university.degree,,0.91
+722,5:high.school,5:high.school,,0.621
+723,7:university.degree,7:university.degree,,0.673
+724,7:university.degree,5:high.school,+,0.538
+725,4:basic.9y,5:high.school,+,0.5
+726,2:basic.4y,2:basic.4y,,0.5
+727,4:basic.9y,4:basic.9y,,0.567
+728,6:professional.course,7:university.degree,+,0.499
+729,6:professional.course,4:basic.9y,+,0.711
+730,1:?,5:high.school,,0.714
+731,5:high.school,7:university.degree,+,0.732
+732,4:basic.9y,5:high.school,+,0.683
+733,7:university.degree,7:university.degree,,0.75
+734,7:university.degree,6:professional.course,+,0.683
+735,6:professional.course,6:professional.course,,1
+736,2:basic.4y,4:basic.9y,+,0.667
+737,4:basic.9y,5:high.school,+,0.804
+738,4:basic.9y,5:high.school,+,0.683
+739,7:university.degree,7:university.degree,,0.75
+740,6:professional.course,4:basic.9y,+,0.5
+741,1:?,7:university.degree,,0.673
+742,5:high.school,5:high.school,,1
+743,5:high.school,5:high.school,,0.8
+744,2:basic.4y,6:professional.course,+,0.747
+745,7:university.degree,7:university.degree,,0.706
+746,6:professional.course,6:professional.course,,0.904
+747,2:basic.4y,2:basic.4y,,1
+748,7:university.degree,7:university.degree,,0.732
+749,3:basic.6y,7:university.degree,+,0.75
+750,7:university.degree,7:university.degree,,0.65
+751,5:high.school,5:high.school,,0.683
+752,4:basic.9y,4:basic.9y,,0.857
+753,5:high.school,5:high.school,,0.683
+754,7:university.degree,7:university.degree,,0.667
+755,5:high.school,5:high.school,,0.683
+756,6:professional.course,5:high.school,+,0.497
+757,7:university.degree,7:university.degree,,0.658
+758,4:basic.9y,3:basic.6y,+,0.5
+759,4:basic.9y,4:basic.9y,,0.833
+760,5:high.school,5:high.school,,1
+761,2:basic.4y,2:basic.4y,,0.645
+762,4:basic.9y,7:university.degree,+,0.499
+763,2:basic.4y,2:basic.4y,,0.497
+764,7:university.degree,2:basic.4y,+,0.5
+765,3:basic.6y,3:basic.6y,,1
+766,1:?,5:high.school,,0.714
+767,4:basic.9y,7:university.degree,+,0.456
+768,4:basic.9y,4:basic.9y,,1
+769,7:university.degree,7:university.degree,,0.673
+770,5:high.school,5:high.school,,1
+771,1:?,7:university.degree,,0.571
+772,6:professional.course,6:professional.course,,1
+773,4:basic.9y,4:basic.9y,,0.692
+774,7:university.degree,7:university.degree,,0.732
+775,7:university.degree,7:university.degree,,0.732
+776,4:basic.9y,5:high.school,+,0.621
+777,7:university.degree,7:university.degree,,1
+778,1:?,7:university.degree,,0.985
+779,7:university.degree,7:university.degree,,0.75
+780,5:high.school,5:high.school,,0.683
+781,5:high.school,4:basic.9y,+,0.556
+782,5:high.school,5:high.school,,0.683
+783,3:basic.6y,3:basic.6y,,0.667
+784,4:basic.9y,4:basic.9y,,0.567
+785,4:basic.9y,5:high.school,+,0.658
+786,5:high.school,5:high.school,,0.683
+787,5:high.school,5:high.school,,1
+788,7:university.degree,7:university.degree,,0.939
+789,6:professional.course,5:high.school,+,0.538
+790,6:professional.course,6:professional.course,,1
+791,6:professional.course,6:professional.course,,0.747
+792,4:basic.9y,4:basic.9y,,0.333
+793,5:high.school,5:high.school,,0.683
+794,4:basic.9y,4:basic.9y,,0.714
+795,4:basic.9y,2:basic.4y,+,0.589
+796,4:basic.9y,2:basic.4y,+,0.5
+797,5:high.school,5:high.school,,0.621
+798,7:university.degree,5:high.school,+,0.621
+799,5:high.school,5:high.school,,0.683
+800,4:basic.9y,4:basic.9y,,0.667
+801,4:basic.9y,4:basic.9y,,0.714
+802,7:university.degree,7:university.degree,,0.732
+803,2:basic.4y,2:basic.4y,,0.5
+804,5:high.school,7:university.degree,+,0.673
+805,4:basic.9y,4:basic.9y,,0.5
+806,3:basic.6y,2:basic.4y,+,0.667
+807,6:professional.course,6:professional.course,,1
+808,6:professional.course,6:professional.course,,0.534
+809,7:university.degree,7:university.degree,,0.69
+810,4:basic.9y,6:professional.course,+,0.747
+811,6:professional.course,5:high.school,+,0.455
+812,1:?,7:university.degree,,0.38
+813,5:high.school,5:high.school,,0.621
+814,5:high.school,5:high.school,,0.75
+815,4:basic.9y,4:basic.9y,,0.742
+816,4:basic.9y,7:university.degree,+,0.673
+817,3:basic.6y,5:high.school,+,0.606
+818,5:high.school,5:high.school,,0.602
+819,5:high.school,4:basic.9y,+,0.567
+820,5:high.school,5:high.school,,0.621
+821,4:basic.9y,4:basic.9y,,0.5
+822,4:basic.9y,4:basic.9y,,0.711
+823,5:high.school,5:high.school,,0.683
+824,5:high.school,5:high.school,,0.683
+825,5:high.school,5:high.school,,0.683
+826,7:university.degree,3:basic.6y,+,0.455
+827,5:high.school,5:high.school,,1
+828,7:university.degree,7:university.degree,,0.732
+829,7:university.degree,7:university.degree,,0.875
+830,5:high.school,5:high.school,,0.455
+831,3:basic.6y,2:basic.4y,+,0.5
+832,6:professional.course,7:university.degree,+,0.429
+833,3:basic.6y,3:basic.6y,,0.667
+834,7:university.degree,7:university.degree,,0.732
+835,7:university.degree,5:high.school,+,0.683
+836,7:university.degree,7:university.degree,,0.857
+837,4:basic.9y,4:basic.9y,,0.833
+838,5:high.school,3:basic.6y,+,0.316
+839,5:high.school,5:high.school,,0.538
+840,1:?,7:university.degree,,0.985
+841,4:basic.9y,4:basic.9y,,0.562
+842,7:university.degree,5:high.school,+,0.602
+843,1:?,2:basic.4y,,0.589
+844,4:basic.9y,4:basic.9y,,0.667
+845,7:university.degree,7:university.degree,,0.957
+846,4:basic.9y,4:basic.9y,,1
+847,4:basic.9y,2:basic.4y,+,0.589
+848,6:professional.course,6:professional.course,,0.727
+849,2:basic.4y,2:basic.4y,,0.667
+850,4:basic.9y,5:high.school,+,0.683
+851,3:basic.6y,2:basic.4y,+,0.333
+852,7:university.degree,7:university.degree,,0.797
+853,5:high.school,5:high.school,,1
+854,5:high.school,7:university.degree,+,0.499
+855,7:university.degree,7:university.degree,,0.721
+856,5:high.school,5:high.school,,0.683
+857,1:?,7:university.degree,,0.499
+858,5:high.school,5:high.school,,0.5
+859,3:basic.6y,5:high.school,+,0.8
+860,7:university.degree,7:university.degree,,0.732
+861,7:university.degree,7:university.degree,,0.957
+862,7:university.degree,7:university.degree,,0.732
+863,2:basic.4y,4:basic.9y,+,0.567
+864,5:high.school,7:university.degree,+,0.824
+865,7:university.degree,7:university.degree,,0.732
+866,5:high.school,6:professional.course,+,0.727
+867,7:university.degree,7:university.degree,,0.57
+868,2:basic.4y,4:basic.9y,+,0.562
+869,3:basic.6y,2:basic.4y,+,0.589
+870,6:professional.course,6:professional.course,,0.8
+871,1:?,4:basic.9y,,0.54
+872,5:high.school,5:high.school,,1
+873,5:high.school,5:high.school,,0.602
+874,7:university.degree,7:university.degree,,0.9
+875,5:high.school,5:high.school,,0.621
+876,6:professional.course,6:professional.course,,0.683
+877,7:university.degree,7:university.degree,,0.8
+878,7:university.degree,7:university.degree,,0.499
+879,6:professional.course,6:professional.course,,0.904
+880,2:basic.4y,2:basic.4y,,0.667
+881,6:professional.course,6:professional.course,,0.904
+882,3:basic.6y,2:basic.4y,+,0.589
+883,7:university.degree,7:university.degree,,0.957
+884,5:high.school,7:university.degree,+,0.732
+885,4:basic.9y,7:university.degree,+,0.732
+886,5:high.school,5:high.school,,0.683
+887,5:high.school,5:high.school,,0.5
+888,6:professional.course,4:basic.9y,+,0.55
+889,4:basic.9y,7:university.degree,+,0.499
+890,5:high.school,5:high.school,,0.683
+891,5:high.school,5:high.school,,0.683
+892,5:high.school,5:high.school,,0.683
+893,3:basic.6y,7:university.degree,+,0.732
+894,5:high.school,5:high.school,,0.683
+895,7:university.degree,7:university.degree,,0.667
+896,7:university.degree,7:university.degree,,0.797
+897,4:basic.9y,5:high.school,+,0.683
+898,7:university.degree,7:university.degree,,0.429
+899,1:?,5:high.school,,0.683
+900,7:university.degree,7:university.degree,,0.57
+901,4:basic.9y,4:basic.9y,,0.711
+902,4:basic.9y,4:basic.9y,,0.667
+903,4:basic.9y,5:high.school,+,0.683
+904,6:professional.course,6:professional.course,,0.727
+905,2:basic.4y,2:basic.4y,,0.5
+906,4:basic.9y,4:basic.9y,,0.8
+907,5:high.school,5:high.school,,0.37
+908,7:university.degree,7:university.degree,,0.957
+909,2:basic.4y,2:basic.4y,,0.402
+910,5:high.school,7:university.degree,+,0.707
+911,5:high.school,5:high.school,,0.683
+912,4:basic.9y,4:basic.9y,,0.667
+913,2:basic.4y,5:high.school,+,0.683
+914,2:basic.4y,5:high.school,+,0.493
+915,5:high.school,5:high.school,,0.683
+916,7:university.degree,7:university.degree,,0.957
+917,5:high.school,7:university.degree,+,0.673
+918,2:basic.4y,2:basic.4y,,1
+919,7:university.degree,7:university.degree,,0.6
+920,5:high.school,5:high.school,,0.683
+921,5:high.school,5:high.school,,1
+922,7:university.degree,7:university.degree,,0.732
+923,4:basic.9y,5:high.school,+,0.683
+924,5:high.school,5:high.school,,0.8
+925,4:basic.9y,7:university.degree,+,0.8
+926,7:university.degree,7:university.degree,,1
+927,4:basic.9y,4:basic.9y,,1
+928,4:basic.9y,7:university.degree,+,0.797
+929,5:high.school,5:high.school,,0.75
+930,1:?,7:university.degree,,0.353
+931,5:high.school,5:high.school,,0.5
+932,4:basic.9y,7:university.degree,+,0.456
+933,4:basic.9y,4:basic.9y,,0.833
+934,7:university.degree,7:university.degree,,0.91
+935,5:high.school,5:high.school,,0.621
+936,3:basic.6y,4:basic.9y,+,0.667
+937,3:basic.6y,3:basic.6y,,0.563
+938,4:basic.9y,2:basic.4y,+,0.589
+939,7:university.degree,7:university.degree,,0.9
+940,2:basic.4y,2:basic.4y,,0.5
+941,7:university.degree,7:university.degree,,0.707
+942,4:basic.9y,4:basic.9y,,0.667
+943,7:university.degree,7:university.degree,,1
+944,5:high.school,7:university.degree,+,0.75
+945,2:basic.4y,2:basic.4y,,0.667
+946,4:basic.9y,3:basic.6y,+,0.711
+947,7:university.degree,5:high.school,+,0.602
+948,4:basic.9y,7:university.degree,+,0.763
+949,7:university.degree,7:university.degree,,0.939
+950,4:basic.9y,4:basic.9y,,0.742
+951,7:university.degree,7:university.degree,,0.499
+952,4:basic.9y,4:basic.9y,,0.5
+953,6:professional.course,6:professional.course,,0.857
+954,5:high.school,6:professional.course,+,0.667
+955,6:professional.course,2:basic.4y,+,0.5
+956,4:basic.9y,5:high.school,+,0.5
+957,4:basic.9y,4:basic.9y,,0.962
+958,5:high.school,5:high.school,,1
+959,5:high.school,5:high.school,,0.683
+960,5:high.school,5:high.school,,0.683
+961,7:university.degree,6:professional.course,+,0.5
+962,2:basic.4y,2:basic.4y,,0.645
+963,2:basic.4y,2:basic.4y,,0.8
+964,4:basic.9y,5:high.school,+,0.8
+965,7:university.degree,7:university.degree,,0.732
+966,2:basic.4y,4:basic.9y,+,0.714
+967,6:professional.course,5:high.school,+,0.5
+968,7:university.degree,7:university.degree,,0.707
+969,2:basic.4y,2:basic.4y,,1
+970,7:university.degree,7:university.degree,,0.732
+971,6:professional.course,6:professional.course,,0.667
+972,2:basic.4y,7:university.degree,+,0.732
+973,7:university.degree,7:university.degree,,1
+974,5:high.school,5:high.school,,0.683
+975,5:high.school,4:basic.9y,+,0.75
+976,4:basic.9y,2:basic.4y,+,0.5
+977,4:basic.9y,4:basic.9y,,0.5
+978,5:high.school,5:high.school,,0.602
+979,5:high.school,7:university.degree,+,0.673
+980,6:professional.course,7:university.degree,+,0.57
+981,7:university.degree,7:university.degree,,0.827
+982,5:high.school,5:high.school,,1
+983,5:high.school,5:high.school,,1
+984,4:basic.9y,5:high.school,+,0.5
+985,6:professional.course,5:high.school,+,0.591
+986,5:high.school,5:high.school,,0.621
+987,4:basic.9y,4:basic.9y,,0.711
+988,2:basic.4y,2:basic.4y,,1
+989,2:basic.4y,7:university.degree,+,0.499
+990,7:university.degree,7:university.degree,,0.91
+991,5:high.school,7:university.degree,+,0.957
+992,1:?,5:high.school,,1
+993,5:high.school,5:high.school,,0.683
+994,2:basic.4y,2:basic.4y,,0.884
+995,4:basic.9y,5:high.school,+,0.683
+996,5:high.school,5:high.school,,0.455
+997,1:?,5:high.school,,0.8
+998,4:basic.9y,7:university.degree,+,0.75
+999,6:professional.course,7:university.degree,+,0.499
+1000,3:basic.6y,5:high.school,+,0.683
+1001,7:university.degree,7:university.degree,,0.706
+1002,1:?,6:professional.course,,1
+1003,4:basic.9y,4:basic.9y,,1
+1004,3:basic.6y,3:basic.6y,,0.667
+1005,7:university.degree,7:university.degree,,0.429
+1006,7:university.degree,7:university.degree,,0.594
+1007,4:basic.9y,4:basic.9y,,1
+1008,6:professional.course,4:basic.9y,+,0.5
+1009,5:high.school,5:high.school,,0.621
+1010,1:?,4:basic.9y,,0.742
+1011,5:high.school,5:high.school,,0.683
+1012,2:basic.4y,2:basic.4y,,1
+1013,7:university.degree,7:university.degree,,0.732
+1014,5:high.school,5:high.school,,0.621
+1015,1:?,5:high.school,,0.683
+1016,2:basic.4y,2:basic.4y,,0.645
+1017,4:basic.9y,5:high.school,+,0.683
+1018,1:?,7:university.degree,,0.333
+1019,4:basic.9y,4:basic.9y,,0.333
+1020,7:university.degree,7:university.degree,,0.75
+1021,5:high.school,7:university.degree,+,0.732
+1022,4:basic.9y,4:basic.9y,,0.833
+1023,1:?,7:university.degree,,0.763
+1024,7:university.degree,7:university.degree,,1
+1025,6:professional.course,6:professional.course,,0.747
+1026,6:professional.course,3:basic.6y,+,0.647
+1027,4:basic.9y,7:university.degree,+,0.499
+1028,4:basic.9y,4:basic.9y,,0.714
+1029,4:basic.9y,4:basic.9y,,0.562
+1030,7:university.degree,7:university.degree,,0.957
+1031,5:high.school,5:high.school,,0.683
+1032,1:?,7:university.degree,,0.75
+1033,5:high.school,5:high.school,,1
+1034,5:high.school,7:university.degree,+,0.732
+1035,2:basic.4y,4:basic.9y,+,0.667
+1036,2:basic.4y,5:high.school,+,0.497
+1037,5:high.school,5:high.school,,0.683
+1038,7:university.degree,7:university.degree,,0.732
+1039,2:basic.4y,5:high.school,+,0.683
+1040,6:professional.course,6:professional.course,,0.75
+1041,3:basic.6y,3:basic.6y,,0.711
+1042,2:basic.4y,2:basic.4y,,0.442
+1043,7:university.degree,7:university.degree,,0.499
+1044,5:high.school,7:university.degree,+,0.672
+1045,5:high.school,5:high.school,,0.621
+1046,4:basic.9y,4:basic.9y,,0.857
+1047,4:basic.9y,4:basic.9y,,1
+1048,5:high.school,5:high.school,,0.621
+1049,5:high.school,5:high.school,,0.683
+1050,3:basic.6y,7:university.degree,+,0.333
+1051,2:basic.4y,2:basic.4y,,1
+1052,5:high.school,5:high.school,,0.683
+1053,7:university.degree,7:university.degree,,0.833
+1054,4:basic.9y,6:professional.course,+,0.904
+1055,2:basic.4y,2:basic.4y,,0.5
+1056,7:university.degree,7:university.degree,,0.456
+1057,5:high.school,7:university.degree,+,0.571
+1058,7:university.degree,7:university.degree,,0.875
+1059,2:basic.4y,2:basic.4y,,0.8
+1060,5:high.school,5:high.school,,0.375
+1061,5:high.school,5:high.school,,0.683
+1062,5:high.school,7:university.degree,+,0.456
+1063,7:university.degree,7:university.degree,,0.824
+1064,7:university.degree,7:university.degree,,0.673
+1065,7:university.degree,7:university.degree,,1
+1066,5:high.school,5:high.school,,0.538
+1067,6:professional.course,6:professional.course,,0.667
+1068,5:high.school,5:high.school,,0.569
+1069,5:high.school,5:high.school,,0.632
+1070,3:basic.6y,3:basic.6y,,0.5
+1071,4:basic.9y,5:high.school,+,0.683
+1072,2:basic.4y,2:basic.4y,,0.5
+1073,4:basic.9y,4:basic.9y,,0.5
+1074,7:university.degree,7:university.degree,,0.75
+1075,4:basic.9y,4:basic.9y,,0.833
+1076,7:university.degree,7:university.degree,,1
+1077,5:high.school,5:high.school,,0.683
+1078,4:basic.9y,4:basic.9y,,0.692
+1079,7:university.degree,7:university.degree,,0.499
+1080,4:basic.9y,4:basic.9y,,1
+1081,6:professional.course,7:university.degree,+,0.65
+1082,5:high.school,5:high.school,,0.5
+1083,7:university.degree,7:university.degree,,1
+1084,5:high.school,5:high.school,,0.455
+1085,6:professional.course,6:professional.course,,0.75
+1086,7:university.degree,7:university.degree,,0.9
+1087,3:basic.6y,5:high.school,+,0.5
+1088,2:basic.4y,6:professional.course,+,0.397
+1089,7:university.degree,7:university.degree,,0.75
+1090,7:university.degree,7:university.degree,,0.991
+1091,2:basic.4y,2:basic.4y,,0.662
+1092,2:basic.4y,5:high.school,+,0.683
+1093,5:high.school,7:university.degree,+,0.705
+1094,7:university.degree,7:university.degree,,1
+1095,3:basic.6y,2:basic.4y,+,0.5
+1096,7:university.degree,7:university.degree,,0.732
+1097,1:?,5:high.school,,0.714
+1098,5:high.school,5:high.school,,0.683
+1099,7:university.degree,7:university.degree,,0.732
+1100,2:basic.4y,2:basic.4y,,0.833
+1101,7:university.degree,7:university.degree,,0.499
+1102,7:university.degree,7:university.degree,,0.705
+1103,7:university.degree,7:university.degree,,1
+1104,7:university.degree,7:university.degree,,0.939
+1105,7:university.degree,7:university.degree,,1
+1106,5:high.school,5:high.school,,0.683
+1107,5:high.school,5:high.school,,0.714
+1108,6:professional.course,6:professional.course,,0.667
+1109,6:professional.course,5:high.school,+,0.714
+1110,5:high.school,5:high.school,,0.621
+1111,4:basic.9y,4:basic.9y,,1
+1112,7:university.degree,7:university.degree,,0.732
+1113,4:basic.9y,2:basic.4y,+,0.589
+1114,4:basic.9y,5:high.school,+,0.256
+1115,5:high.school,5:high.school,,0.5
+1116,7:university.degree,7:university.degree,,0.65
+1117,7:university.degree,7:university.degree,,0.732
+1118,5:high.school,5:high.school,,0.683
+1119,5:high.school,5:high.school,,0.683
+1120,7:university.degree,2:basic.4y,+,0.402
+1121,5:high.school,5:high.school,,1
+1122,7:university.degree,7:university.degree,,0.732
+1123,6:professional.course,6:professional.course,,0.778
+1124,2:basic.4y,2:basic.4y,,0.5
+1125,7:university.degree,7:university.degree,,0.732
+1126,5:high.school,7:university.degree,+,0.857
+1127,5:high.school,5:high.school,,0.658
+1128,7:university.degree,7:university.degree,,1
+1129,7:university.degree,7:university.degree,,0.732
+1130,6:professional.course,5:high.school,+,0.683
+1131,4:basic.9y,5:high.school,+,0.683
+1132,5:high.school,5:high.school,,1
+1133,7:university.degree,7:university.degree,,0.957
+1134,3:basic.6y,3:basic.6y,,0.563
+1135,5:high.school,7:university.degree,+,0.833
+1136,6:professional.course,6:professional.course,,0.683
+1137,5:high.school,5:high.school,,1
+1138,7:university.degree,7:university.degree,,0.732
+1139,2:basic.4y,2:basic.4y,,1
+1140,7:university.degree,7:university.degree,,0.75
+1141,2:basic.4y,5:high.school,+,0.5
+1142,7:university.degree,7:university.degree,,0.732
+1143,5:high.school,3:basic.6y,+,0.374
+1144,7:university.degree,7:university.degree,,1
+1145,6:professional.course,6:professional.course,,0.747
+1146,7:university.degree,7:university.degree,,0.8
+1147,5:high.school,5:high.school,,0.75
+1148,6:professional.course,6:professional.course,,0.778
+1149,7:university.degree,7:university.degree,,0.75
+1150,3:basic.6y,3:basic.6y,,0.75
+1151,7:university.degree,7:university.degree,,0.939
+1152,5:high.school,5:high.school,,0.683
+1153,7:university.degree,7:university.degree,,0.797
+1154,5:high.school,4:basic.9y,+,0.6
+1155,5:high.school,5:high.school,,0.375
+1156,5:high.school,4:basic.9y,+,0.508
+1157,1:?,7:university.degree,,0.282
+1158,5:high.school,5:high.school,,0.683
+1159,7:university.degree,7:university.degree,,0.594
+1160,7:university.degree,7:university.degree,,0.91
+1161,2:basic.4y,2:basic.4y,,1
+1162,5:high.school,7:university.degree,+,0.499
+1163,1:?,5:high.school,,0.683
+1164,5:high.school,5:high.school,,0.683
+1165,7:university.degree,7:university.degree,,0.957
+1166,3:basic.6y,3:basic.6y,,0.75
+1167,5:high.school,5:high.school,,0.683
+1168,7:university.degree,7:university.degree,,0.957
+1169,5:high.school,5:high.school,,0.683
+1170,7:university.degree,7:university.degree,,0.732
+1171,5:high.school,7:university.degree,+,0.732
+1172,4:basic.9y,5:high.school,+,0.683
+1173,7:university.degree,7:university.degree,,0.824
+1174,5:high.school,5:high.school,,0.683
+1175,5:high.school,5:high.school,,0.794
+1176,3:basic.6y,2:basic.4y,+,0.5
+1177,5:high.school,2:basic.4y,+,0.333
+1178,4:basic.9y,2:basic.4y,+,0.589
+1179,5:high.school,5:high.school,,0.714
+1180,7:university.degree,5:high.school,+,0.621
+1181,4:basic.9y,4:basic.9y,,0.667
+1182,7:university.degree,7:university.degree,,0.732
+1183,3:basic.6y,3:basic.6y,,1
+1184,5:high.school,5:high.school,,0.995
+1185,5:high.school,7:university.degree,+,0.708
+1186,2:basic.4y,2:basic.4y,,0.589
+1187,3:basic.6y,5:high.school,+,0.5
+1188,5:high.school,5:high.school,,0.8
+1189,6:professional.course,6:professional.course,,0.857
+1190,7:university.degree,2:basic.4y,+,0.402
+1191,4:basic.9y,5:high.school,+,0.683
+1192,5:high.school,5:high.school,,0.602
+1193,7:university.degree,7:university.degree,,0.981
+1194,7:university.degree,5:high.school,+,0.455
+1195,6:professional.course,6:professional.course,,1
+1196,5:high.school,5:high.school,,0.683
+1197,5:high.school,7:university.degree,+,0.732
+1198,2:basic.4y,2:basic.4y,,0.402
+1199,5:high.school,5:high.school,,0.683
+1200,7:university.degree,7:university.degree,,0.708
+1201,1:?,5:high.school,,0.714
+1202,4:basic.9y,4:basic.9y,,0.6
+1203,7:university.degree,7:university.degree,,0.824
+1204,2:basic.4y,2:basic.4y,,0.589
+1205,5:high.school,5:high.school,,0.683
+1206,7:university.degree,7:university.degree,,0.673
+1207,1:?,5:high.school,,0.464
+1208,2:basic.4y,7:university.degree,+,0.499
+1209,7:university.degree,5:high.school,+,0.621
+1210,7:university.degree,7:university.degree,,1
+1211,6:professional.course,6:professional.course,,0.75
+1212,7:university.degree,7:university.degree,,0.824
+1213,6:professional.course,6:professional.course,,1
+1214,3:basic.6y,5:high.school,+,0.5
+1215,5:high.school,5:high.school,,0.8
+1216,7:university.degree,7:university.degree,,0.732
+1217,5:high.school,5:high.school,,0.683
+1218,7:university.degree,7:university.degree,,0.732
+1219,4:basic.9y,4:basic.9y,,0.667
+1220,5:high.school,5:high.school,,0.765
+1221,7:university.degree,7:university.degree,,0.667
+1222,7:university.degree,7:university.degree,,0.824
+1223,7:university.degree,7:university.degree,,1
+1224,5:high.school,5:high.school,,0.538
+1225,7:university.degree,7:university.degree,,0.824
+1226,2:basic.4y,4:basic.9y,+,0.333
+1227,7:university.degree,7:university.degree,,0.957
+1228,7:university.degree,7:university.degree,,0.957
+1229,5:high.school,5:high.school,,0.591
+1230,4:basic.9y,5:high.school,+,0.632
+1231,6:professional.course,6:professional.course,,0.857
+1232,4:basic.9y,5:high.school,+,0.683
+1233,6:professional.course,7:university.degree,+,0.333
+1234,3:basic.6y,3:basic.6y,,0.667
+1235,7:university.degree,7:university.degree,,0.957
+1236,6:professional.course,6:professional.course,,0.857
+1237,4:basic.9y,4:basic.9y,,0.742
+1238,4:basic.9y,5:high.school,+,0.683
+1239,3:basic.6y,2:basic.4y,+,0.589
+1240,4:basic.9y,4:basic.9y,,0.692
+1241,7:university.degree,6:professional.course,+,0.727
+1242,2:basic.4y,7:university.degree,+,0.75
+1243,7:university.degree,7:university.degree,,0.732
+1244,3:basic.6y,2:basic.4y,+,0.589
+1245,7:university.degree,7:university.degree,,0.667
+1246,5:high.school,5:high.school,,0.683
+1247,5:high.school,5:high.school,,1
+1248,2:basic.4y,5:high.school,+,0.683
+1249,5:high.school,5:high.school,,0.569
+1250,2:basic.4y,2:basic.4y,,0.667
+1251,7:university.degree,7:university.degree,,0.658
+1252,5:high.school,5:high.school,,0.683
+1253,7:university.degree,7:university.degree,,0.706
+1254,4:basic.9y,7:university.degree,+,0.499
+1255,5:high.school,5:high.school,,0.621
+1256,7:university.degree,7:university.degree,,0.8
+1257,6:professional.course,6:professional.course,,0.857
+1258,2:basic.4y,2:basic.4y,,0.984
+1259,3:basic.6y,5:high.school,+,0.683
+1260,1:?,4:basic.9y,,0.5
+1261,7:university.degree,7:university.degree,,0.827
+1262,7:university.degree,7:university.degree,,0.957
+1263,2:basic.4y,4:basic.9y,+,0.692
+1264,4:basic.9y,4:basic.9y,,0.742
+1265,4:basic.9y,4:basic.9y,,0.667
+1266,3:basic.6y,3:basic.6y,,0.5
+1267,4:basic.9y,4:basic.9y,,0.667
+1268,5:high.school,5:high.school,,0.683
+1269,7:university.degree,7:university.degree,,0.995
+1270,4:basic.9y,5:high.school,+,0.455
+1271,6:professional.course,6:professional.course,,0.667
+1272,2:basic.4y,2:basic.4y,,0.589
+1273,5:high.school,5:high.school,,0.683
+1274,5:high.school,5:high.school,,0.621
+1275,7:university.degree,7:university.degree,,0.732
+1276,5:high.school,7:university.degree,+,0.732
+1277,5:high.school,5:high.school,,0.621
+1278,5:high.school,4:basic.9y,+,0.6
+1279,1:?,6:professional.course,,1
+1280,4:basic.9y,7:university.degree,+,0.499
+1281,6:professional.course,5:high.school,+,0.319
+1282,6:professional.course,7:university.degree,+,0.62
+1283,5:high.school,5:high.school,,0.683
+1284,7:university.degree,7:university.degree,,1
+1285,7:university.degree,2:basic.4y,+,0.402
+1286,7:university.degree,7:university.degree,,0.833
+1287,5:high.school,5:high.school,,0.683
+1288,7:university.degree,7:university.degree,,0.75
+1289,5:high.school,5:high.school,,0.683
+1290,6:professional.course,6:professional.course,,1
+1291,4:basic.9y,5:high.school,+,0.683
+1292,5:high.school,5:high.school,,0.683
+1293,7:university.degree,5:high.school,+,0.621
+1294,1:?,7:university.degree,,0.985
+1295,6:professional.course,6:professional.course,,0.747
+1296,5:high.school,5:high.school,,0.667
+1297,7:university.degree,7:university.degree,,0.732
+1298,5:high.school,5:high.school,,0.794
+1299,6:professional.course,4:basic.9y,+,0.692
+1300,2:basic.4y,2:basic.4y,,0.333
+1301,7:university.degree,7:university.degree,,0.957
+1302,5:high.school,5:high.school,,0.683
+1303,6:professional.course,6:professional.course,,0.857
+1304,6:professional.course,4:basic.9y,+,0.54
+1305,5:high.school,5:high.school,,0.765
+1306,7:university.degree,5:high.school,+,0.375
+1307,7:university.degree,7:university.degree,,0.62
+1308,1:?,7:university.degree,,0.732
+1309,5:high.school,5:high.school,,1
+1310,6:professional.course,6:professional.course,,1
+1311,4:basic.9y,7:university.degree,+,0.494
+1312,5:high.school,7:university.degree,+,0.673
+1313,7:university.degree,7:university.degree,,0.673
+1314,7:university.degree,7:university.degree,,0.957
+1315,7:university.degree,7:university.degree,,0.957
+1316,5:high.school,5:high.school,,1
+1317,4:basic.9y,4:basic.9y,,0.692
+1318,4:basic.9y,4:basic.9y,,0.857
+1319,7:university.degree,6:professional.course,+,0.5
+1320,3:basic.6y,7:university.degree,+,0.706
+1321,6:professional.course,6:professional.course,,1
+1322,3:basic.6y,2:basic.4y,+,0.589
+1323,6:professional.course,5:high.school,+,0.714
+1324,5:high.school,5:high.school,,1
+1325,5:high.school,5:high.school,,0.683
+1326,3:basic.6y,3:basic.6y,,1
+1327,6:professional.course,7:university.degree,+,0.75
+1328,7:university.degree,7:university.degree,,1
+1329,4:basic.9y,4:basic.9y,,0.75
+1330,2:basic.4y,2:basic.4y,,0.5
+1331,3:basic.6y,3:basic.6y,,1
+1332,7:university.degree,7:university.degree,,0.707
+1333,4:basic.9y,5:high.school,+,0.621
+1334,5:high.school,5:high.school,,0.683
+1335,7:university.degree,4:basic.9y,+,0.5
+1336,7:university.degree,7:university.degree,,0.957
+1337,5:high.school,5:high.school,,0.683
+1338,5:high.school,6:professional.course,+,0.75
+1339,2:basic.4y,2:basic.4y,,0.589
+1340,5:high.school,7:university.degree,+,0.708
+1341,4:basic.9y,2:basic.4y,+,0.442
+1342,5:high.school,4:basic.9y,+,0.567
+1343,3:basic.6y,2:basic.4y,+,0.645
+1344,6:professional.course,3:basic.6y,+,0.667
+1345,5:high.school,5:high.school,,1
+1346,7:university.degree,7:university.degree,,0.732
+1347,6:professional.course,6:professional.course,,0.747
+1348,4:basic.9y,5:high.school,+,0.683
+1349,7:university.degree,5:high.school,+,0.683
+1350,7:university.degree,7:university.degree,,1
+1351,4:basic.9y,4:basic.9y,,0.54
+1352,6:professional.course,6:professional.course,,1
+1353,5:high.school,2:basic.4y,+,0.402
+1354,5:high.school,5:high.school,,1
+1355,7:university.degree,7:university.degree,,1
+1356,4:basic.9y,4:basic.9y,,1
+1357,5:high.school,5:high.school,,0.683
+1358,5:high.school,2:basic.4y,+,0.333
+1359,1:?,4:basic.9y,,0.567
+1360,6:professional.course,6:professional.course,,1
+1361,7:university.degree,7:university.degree,,0.673
+1362,6:professional.course,6:professional.course,,0.904
+1363,2:basic.4y,2:basic.4y,,0.833
+1364,4:basic.9y,4:basic.9y,,0.562
+1365,5:high.school,5:high.school,,0.8
+1366,7:university.degree,7:university.degree,,0.957
+1367,1:?,4:basic.9y,,0.667
+1368,7:university.degree,7:university.degree,,0.732
+1369,6:professional.course,6:professional.course,,1
+1370,5:high.school,2:basic.4y,+,0.589
+1371,7:university.degree,7:university.degree,,1
+1372,7:university.degree,7:university.degree,,0.957
+1373,7:university.degree,7:university.degree,,0.957
+1374,2:basic.4y,2:basic.4y,,1
+1375,7:university.degree,7:university.degree,,0.9
+1376,5:high.school,5:high.school,,0.606
+1377,7:university.degree,7:university.degree,,0.499
+1378,7:university.degree,7:university.degree,,0.732
+1379,7:university.degree,7:university.degree,,0.75
+1380,5:high.school,5:high.school,,0.5
+1381,5:high.school,5:high.school,,0.621
+1382,3:basic.6y,2:basic.4y,+,0.402
+1383,5:high.school,5:high.school,,0.683
+1384,6:professional.course,6:professional.course,,1
+1385,3:basic.6y,3:basic.6y,,0.987
+1386,1:?,5:high.school,,0.683
+1387,7:university.degree,7:university.degree,,0.667
+1388,7:university.degree,3:basic.6y,+,0.5
+1389,4:basic.9y,5:high.school,+,0.683
+1390,7:university.degree,7:university.degree,,0.57
+1391,5:high.school,2:basic.4y,+,0.554
+1392,7:university.degree,7:university.degree,,0.732
+1393,6:professional.course,6:professional.course,,0.682
+1394,6:professional.course,6:professional.course,,0.857
+1395,6:professional.course,6:professional.course,,0.747
+1396,7:university.degree,7:university.degree,,0.57
+1397,2:basic.4y,2:basic.4y,,0.833
+1398,5:high.school,5:high.school,,0.8
+1399,7:university.degree,7:university.degree,,0.499
+1400,4:basic.9y,4:basic.9y,,0.8
+1401,6:professional.course,6:professional.course,,1
+1402,7:university.degree,7:university.degree,,0.499
+1403,4:basic.9y,4:basic.9y,,0.8
+1404,5:high.school,5:high.school,,0.714
+1405,3:basic.6y,3:basic.6y,,0.987
+1406,1:?,4:basic.9y,,0.742
+1407,2:basic.4y,2:basic.4y,,0.5
+1408,5:high.school,5:high.school,,0.621
+1409,7:university.degree,2:basic.4y,+,0.442
+1410,4:basic.9y,5:high.school,+,0.75
+1411,2:basic.4y,2:basic.4y,,0.833
+1412,5:high.school,5:high.school,,0.683
+1413,6:professional.course,6:professional.course,,0.727
+1414,1:?,5:high.school,,0.264
+1415,2:basic.4y,4:basic.9y,+,0.714
+1416,7:university.degree,5:high.school,+,0.444
+1417,7:university.degree,5:high.school,+,0.455
+1418,7:university.degree,7:university.degree,,0.499
+1419,2:basic.4y,2:basic.4y,,1
+1420,2:basic.4y,2:basic.4y,,0.645
+1421,5:high.school,7:university.degree,+,0.456
+1422,1:?,2:basic.4y,,0.645
+1423,4:basic.9y,4:basic.9y,,0.692
+1424,2:basic.4y,2:basic.4y,,0.589
+1425,4:basic.9y,2:basic.4y,+,0.667
+1426,6:professional.course,6:professional.course,,1
+1427,4:basic.9y,2:basic.4y,+,0.333
+1428,2:basic.4y,2:basic.4y,,0.589
+1429,6:professional.course,6:professional.course,,0.857
+1430,7:university.degree,7:university.degree,,0.797
+1431,6:professional.course,6:professional.course,,0.778
+1432,2:basic.4y,7:university.degree,+,0.499
+1433,7:university.degree,7:university.degree,,1
+1434,5:high.school,5:high.school,,0.538
+1435,1:?,7:university.degree,,0.31
+1436,6:professional.course,6:professional.course,,0.747
+1437,7:university.degree,7:university.degree,,0.91
+1438,4:basic.9y,4:basic.9y,,0.667
+1439,2:basic.4y,4:basic.9y,+,0.562
+1440,7:university.degree,7:university.degree,,0.732
+1441,4:basic.9y,4:basic.9y,,0.692
+1442,7:university.degree,5:high.school,+,0.5
+1443,6:professional.course,2:basic.4y,+,0.402
+1444,7:university.degree,7:university.degree,,0.732
+1445,5:high.school,5:high.school,,0.683
+1446,4:basic.9y,4:basic.9y,,0.667
+1447,2:basic.4y,2:basic.4y,,0.833
+1448,1:?,5:high.school,,0.714
+1449,6:professional.course,6:professional.course,,0.75
+1450,4:basic.9y,3:basic.6y,+,0.563
+1451,4:basic.9y,3:basic.6y,+,0.563
+1452,4:basic.9y,4:basic.9y,,0.567
+1453,7:university.degree,2:basic.4y,+,0.667
+1454,6:professional.course,4:basic.9y,+,0.333
+1455,5:high.school,5:high.school,,0.714
+1456,7:university.degree,7:university.degree,,1
+1457,5:high.school,2:basic.4y,+,0.5
+1458,7:university.degree,7:university.degree,,0.957
+1459,6:professional.course,6:professional.course,,0.5
+1460,7:university.degree,7:university.degree,,0.957
+1461,6:professional.course,6:professional.course,,0.904
+1462,1:?,3:basic.6y,,1
+1463,5:high.school,5:high.school,,0.5
+1464,5:high.school,7:university.degree,+,0.57
+1465,6:professional.course,6:professional.course,,1
+1466,7:university.degree,7:university.degree,,1
+1467,4:basic.9y,5:high.school,+,0.714
+1468,7:university.degree,7:university.degree,,0.456
+1469,5:high.school,5:high.school,,0.8
+1470,6:professional.course,6:professional.course,,0.778
+1471,6:professional.course,5:high.school,+,0.538
+1472,3:basic.6y,3:basic.6y,,0.563
+1473,6:professional.course,6:professional.course,,0.904
+1474,1:?,4:basic.9y,,0.5
+1475,5:high.school,7:university.degree,+,0.957
+1476,4:basic.9y,5:high.school,+,0.5
+1477,5:high.school,5:high.school,,1
+1478,6:professional.course,7:university.degree,+,0.875
+1479,7:university.degree,7:university.degree,,0.705
+1480,3:basic.6y,3:basic.6y,,0.647
+1481,7:university.degree,7:university.degree,,0.824
+1482,3:basic.6y,3:basic.6y,,0.563
+1483,5:high.school,5:high.school,,0.794
+1484,3:basic.6y,4:basic.9y,+,0.714
+1485,7:university.degree,7:university.degree,,0.673
+1486,7:university.degree,7:university.degree,,0.957
+1487,7:university.degree,7:university.degree,,0.732
+1488,6:professional.course,4:basic.9y,+,0.562
+1489,5:high.school,5:high.school,,0.606
+1490,6:professional.course,7:university.degree,+,0.499
+1491,2:basic.4y,2:basic.4y,,1
+1492,5:high.school,7:university.degree,+,0.732
+1493,6:professional.course,6:professional.course,,0.904
+1494,7:university.degree,7:university.degree,,1
+1495,5:high.school,7:university.degree,+,0.499
+1496,4:basic.9y,4:basic.9y,,0.667
+1497,7:university.degree,2:basic.4y,+,0.645
+1498,5:high.school,2:basic.4y,+,0.645
+1499,7:university.degree,7:university.degree,,0.732
+1500,5:high.school,4:basic.9y,+,0.5
+1501,2:basic.4y,7:university.degree,+,0.429
+1502,3:basic.6y,3:basic.6y,,1
+1503,2:basic.4y,2:basic.4y,,0.589
+1504,3:basic.6y,2:basic.4y,+,0.589
+1505,7:university.degree,7:university.degree,,0.957
+1506,7:university.degree,7:university.degree,,0.957
+1507,6:professional.course,6:professional.course,,0.534
+1508,4:basic.9y,5:high.school,+,0.621
+1509,4:basic.9y,4:basic.9y,,0.667
+1510,7:university.degree,7:university.degree,,0.499
+1511,5:high.school,7:university.degree,+,0.732
+1512,1:?,5:high.school,,0.621
+1513,5:high.school,5:high.school,,0.8
+1514,3:basic.6y,4:basic.9y,+,0.567
+1515,2:basic.4y,7:university.degree,+,0.456
+1516,5:high.school,5:high.school,,0.75
+1517,2:basic.4y,4:basic.9y,+,0.692
+1518,5:high.school,5:high.school,,0.621
+1519,5:high.school,2:basic.4y,+,0.645
+1520,7:university.degree,7:university.degree,,0.857
+1521,7:university.degree,7:university.degree,,0.957
+1522,7:university.degree,7:university.degree,,1
+1523,4:basic.9y,4:basic.9y,,0.692
+1524,3:basic.6y,3:basic.6y,,0.667
+1525,6:professional.course,5:high.school,+,0.621
+1526,5:high.school,5:high.school,,0.683
+1527,7:university.degree,5:high.school,+,0.8
+1528,4:basic.9y,7:university.degree,+,0.732
+1529,7:university.degree,7:university.degree,,0.957
+1530,3:basic.6y,3:basic.6y,,1
+1531,7:university.degree,7:university.degree,,0.9
+1532,7:university.degree,7:university.degree,,0.732
+1533,4:basic.9y,4:basic.9y,,0.562
+1534,6:professional.course,6:professional.course,,0.75
+1535,6:professional.course,5:high.school,+,0.375
+1536,5:high.school,7:university.degree,+,0.285
+1537,4:basic.9y,4:basic.9y,,0.562
+1538,5:high.school,5:high.school,,0.714
+1539,2:basic.4y,2:basic.4y,,0.833
+1540,4:basic.9y,4:basic.9y,,0.556
+1541,7:university.degree,7:university.degree,,0.75
+1542,7:university.degree,7:university.degree,,1
+1543,7:university.degree,7:university.degree,,0.732
+1544,5:high.school,5:high.school,,0.714
+1545,6:professional.course,7:university.degree,+,0.571
+1546,7:university.degree,7:university.degree,,0.875
+1547,2:basic.4y,2:basic.4y,,0.5
+1548,7:university.degree,7:university.degree,,0.732
+1549,2:basic.4y,2:basic.4y,,1
+1550,5:high.school,5:high.school,,0.621
+1551,6:professional.course,6:professional.course,,1
+1552,5:high.school,5:high.school,,0.538
+1553,3:basic.6y,3:basic.6y,,0.316
+1554,5:high.school,5:high.school,,0.683
+1555,1:?,7:university.degree,,0.732
+1556,7:university.degree,7:university.degree,,0.957
+1557,5:high.school,5:high.school,,0.683
+1558,7:university.degree,7:university.degree,,0.673
+1559,5:high.school,5:high.school,,1
+1560,7:university.degree,7:university.degree,,0.732
+1561,5:high.school,5:high.school,,0.683
+1562,6:professional.course,6:professional.course,,1
+1563,1:?,2:basic.4y,,0.589
+1564,2:basic.4y,2:basic.4y,,0.589
+1565,7:university.degree,7:university.degree,,0.833
+1566,7:university.degree,7:university.degree,,0.9
+1567,6:professional.course,6:professional.course,,1
+1568,3:basic.6y,3:basic.6y,,0.374
+1569,6:professional.course,6:professional.course,,0.747
+1570,6:professional.course,4:basic.9y,+,0.333
+1571,5:high.school,5:high.school,,1
+1572,5:high.school,6:professional.course,+,0.778
+1573,5:high.school,2:basic.4y,+,0.645
+1574,4:basic.9y,7:university.degree,+,0.75
+1575,4:basic.9y,7:university.degree,+,0.57
+1576,5:high.school,7:university.degree,+,0.707
+1577,7:university.degree,7:university.degree,,0.721
+1578,5:high.school,5:high.school,,0.683
+1579,3:basic.6y,5:high.school,+,0.683
+1580,5:high.school,5:high.school,,0.683
+1581,5:high.school,7:university.degree,+,0.57
+1582,6:professional.course,5:high.school,+,0.621
+1583,4:basic.9y,7:university.degree,+,0.57
+1584,4:basic.9y,4:basic.9y,,0.714
+1585,4:basic.9y,7:university.degree,+,0.499
+1586,2:basic.4y,3:basic.6y,+,0.563
+1587,2:basic.4y,5:high.school,+,0.326
+1588,4:basic.9y,2:basic.4y,+,0.5
+1589,6:professional.course,6:professional.course,,0.667
+1590,7:university.degree,7:university.degree,,0.75
+1591,3:basic.6y,3:basic.6y,,0.563
+1592,7:university.degree,5:high.school,+,0.64
+1593,5:high.school,7:university.degree,+,0.658
+1594,5:high.school,5:high.school,,0.683
+1595,7:university.degree,7:university.degree,,0.673
+1596,2:basic.4y,2:basic.4y,,0.645
+1597,5:high.school,5:high.school,,0.683
+1598,7:university.degree,7:university.degree,,0.732
+1599,5:high.school,5:high.school,,1
+1600,1:?,2:basic.4y,,0.5
+1601,1:?,6:professional.course,,1
+1602,4:basic.9y,4:basic.9y,,0.714
+1603,7:university.degree,7:university.degree,,0.732
+1604,7:university.degree,7:university.degree,,0.732
+1605,5:high.school,5:high.school,,0.8
+1606,7:university.degree,7:university.degree,,0.827
+1607,4:basic.9y,6:professional.course,+,0.747
+1608,7:university.degree,7:university.degree,,0.732
+1609,5:high.school,7:university.degree,+,0.75
+1610,2:basic.4y,2:basic.4y,,0.8
+1611,2:basic.4y,5:high.school,+,0.5
+1612,5:high.school,4:basic.9y,+,0.692
+1613,7:university.degree,7:university.degree,,0.91
+1614,7:university.degree,7:university.degree,,0.991
+1615,3:basic.6y,3:basic.6y,,0.374
+1616,5:high.school,5:high.school,,0.683
+1617,5:high.school,5:high.school,,1
+1618,5:high.school,4:basic.9y,+,0.8
+1619,1:?,5:high.school,,0.714
+1620,1:?,6:professional.course,,1
+1621,3:basic.6y,3:basic.6y,,0.987
+1622,7:university.degree,7:university.degree,,0.75
+1623,2:basic.4y,2:basic.4y,,0.645
+1624,3:basic.6y,2:basic.4y,+,0.645
+1625,7:university.degree,7:university.degree,,0.8
+1626,7:university.degree,7:university.degree,,0.6
+1627,5:high.school,5:high.school,,0.683
+1628,7:university.degree,7:university.degree,,0.824
+1629,4:basic.9y,4:basic.9y,,0.982
+1630,7:university.degree,7:university.degree,,0.91
+1631,6:professional.course,6:professional.course,,0.747
+1632,6:professional.course,6:professional.course,,0.727
+1633,4:basic.9y,4:basic.9y,,0.54
+1634,7:university.degree,7:university.degree,,0.707
+1635,3:basic.6y,4:basic.9y,+,0.667
+1636,1:?,2:basic.4y,,0.589
+1637,4:basic.9y,4:basic.9y,,1
+1638,6:professional.course,6:professional.course,,0.904
+1639,5:high.school,5:high.school,,0.683
+1640,5:high.school,5:high.school,,0.538
+1641,4:basic.9y,5:high.school,+,0.683
+1642,7:university.degree,7:university.degree,,0.57
+1643,7:university.degree,7:university.degree,,0.499
+1644,1:'',7:university.degree,+,0.705
+1645,7:university.degree,7:university.degree,,1
+1646,5:high.school,2:basic.4y,+,0.402
+1647,2:basic.4y,2:basic.4y,,0.833
+1648,6:professional.course,6:professional.course,,1
+1649,2:basic.4y,2:basic.4y,,0.645
+1650,7:university.degree,4:basic.9y,+,0.33
+1651,5:high.school,5:high.school,,0.64
+1652,1:?,7:university.degree,,0.957
+1653,4:basic.9y,2:basic.4y,+,0.589
+1654,3:basic.6y,3:basic.6y,,0.621
+1655,5:high.school,2:basic.4y,+,0.833
+1656,2:basic.4y,2:basic.4y,,0.662
+1657,7:university.degree,7:university.degree,,0.957
+1658,5:high.school,5:high.school,,0.683
+1659,6:professional.course,6:professional.course,,1
+1660,6:professional.course,5:high.school,+,0.64
+1661,4:basic.9y,2:basic.4y,+,0.589
+1662,6:professional.course,7:university.degree,+,0.62
+1663,7:university.degree,6:professional.course,+,0.667
+1664,4:basic.9y,2:basic.4y,+,0.402
+1665,4:basic.9y,4:basic.9y,,0.567
+1666,7:university.degree,7:university.degree,,0.957
+1667,2:basic.4y,2:basic.4y,,0.5
+1668,5:high.school,5:high.school,,0.64
+1669,6:professional.course,5:high.school,+,0.375
+1670,5:high.school,4:basic.9y,+,0.33
+1671,5:high.school,3:basic.6y,+,0.621
+1672,3:basic.6y,3:basic.6y,,0.621
+1673,6:professional.course,2:basic.4y,+,0.8
+1674,7:university.degree,2:basic.4y,+,0.442
+1675,6:professional.course,6:professional.course,,1
+1676,4:basic.9y,4:basic.9y,,1
+1677,1:?,5:high.school,,0.714
+1678,6:professional.course,6:professional.course,,0.857
+1679,7:university.degree,7:university.degree,,1
+1680,2:basic.4y,7:university.degree,+,0.499
+1681,5:high.school,2:basic.4y,+,0.554
+1682,7:university.degree,7:university.degree,,0.732
+1683,1:?,7:university.degree,,0.461
+1684,1:?,6:professional.course,,1
+1685,7:university.degree,7:university.degree,,0.91
+1686,5:high.school,5:high.school,,0.714
+1687,2:basic.4y,2:basic.4y,,0.667
+1688,6:professional.course,6:professional.course,,0.8
+1689,7:university.degree,7:university.degree,,0.732
+1690,4:basic.9y,3:basic.6y,+,0.316
+1691,6:professional.course,7:university.degree,+,0.62
+1692,1:?,7:university.degree,,0.732
+1693,7:university.degree,7:university.degree,,0.985
+1694,7:university.degree,7:university.degree,,1
+1695,6:professional.course,5:high.school,+,0.683
+1696,7:university.degree,7:university.degree,,0.57
+1697,5:high.school,5:high.school,,0.683
+1698,5:high.school,5:high.school,,1
+1699,4:basic.9y,2:basic.4y,+,0.589
+1700,7:university.degree,7:university.degree,,0.985
+1701,5:high.school,5:high.school,,0.714
+1702,7:university.degree,7:university.degree,,1
+1703,7:university.degree,7:university.degree,,1
+1704,7:university.degree,7:university.degree,,1
+1705,5:high.school,5:high.school,,0.5
+1706,2:basic.4y,2:basic.4y,,0.402
+1707,7:university.degree,7:university.degree,,0.499
+1708,1:?,2:basic.4y,,0.662
+1709,6:professional.course,6:professional.course,,1
+1710,7:university.degree,5:high.school,+,0.683
+1711,4:basic.9y,4:basic.9y,,0.857
+1712,5:high.school,5:high.school,,0.995
+1713,7:university.degree,7:university.degree,,0.91
+1714,2:basic.4y,7:university.degree,+,0.827
+1715,5:high.school,6:professional.course,+,0.778
+1716,7:university.degree,7:university.degree,,0.705
+1717,7:university.degree,7:university.degree,,0.91
+1718,7:university.degree,7:university.degree,,1
+1719,5:high.school,5:high.school,,0.683
+1720,7:university.degree,5:high.school,+,0.621
+1721,4:basic.9y,4:basic.9y,,1
+1722,7:university.degree,7:university.degree,,0.91
+1723,5:high.school,5:high.school,,0.714
+1724,1:?,7:university.degree,,0.422
+1725,4:basic.9y,7:university.degree,+,0.732
+1726,7:university.degree,7:university.degree,,0.957
+1727,5:high.school,5:high.school,,1
+1728,7:university.degree,7:university.degree,,0.75
+1729,4:basic.9y,4:basic.9y,,0.562
+1730,7:university.degree,7:university.degree,,0.732
+1731,4:basic.9y,5:high.school,+,0.714
+1732,3:basic.6y,3:basic.6y,,1
+1733,3:basic.6y,3:basic.6y,,0.647
+1734,6:professional.course,5:high.school,+,0.538
+1735,5:high.school,5:high.school,,0.5
+1736,4:basic.9y,7:university.degree,+,0.732
+1737,7:university.degree,7:university.degree,,0.75
+1738,4:basic.9y,5:high.school,+,0.455
+1739,7:university.degree,7:university.degree,,0.57
+1740,7:university.degree,7:university.degree,,1
+1741,7:university.degree,7:university.degree,,0.91
+1742,5:high.school,5:high.school,,0.683
+1743,5:high.school,5:high.school,,0.591
+1744,5:high.school,7:university.degree,+,0.732
+1745,3:basic.6y,2:basic.4y,+,0.833
+1746,5:high.school,5:high.school,,0.86
+1747,4:basic.9y,5:high.school,+,0.297
+1748,7:university.degree,7:university.degree,,0.91
+1749,7:university.degree,7:university.degree,,0.957
+1750,5:high.school,4:basic.9y,+,0.742
+1751,4:basic.9y,4:basic.9y,,1
+1752,2:basic.4y,2:basic.4y,,0.667
+1753,7:university.degree,7:university.degree,,1
+1754,5:high.school,5:high.school,,1
+1755,7:university.degree,7:university.degree,,0.732
+1756,7:university.degree,7:university.degree,,0.708
+1757,5:high.school,5:high.school,,0.64
+1758,2:basic.4y,2:basic.4y,,0.5
+1759,7:university.degree,7:university.degree,,0.732
+1760,5:high.school,5:high.school,,1
+1761,7:university.degree,7:university.degree,,0.75
+1762,6:professional.course,5:high.school,+,0.5
+1763,7:university.degree,7:university.degree,,0.957
+1764,5:high.school,5:high.school,,0.5
+1765,7:university.degree,5:high.school,+,0.621
+1766,7:university.degree,7:university.degree,,0.673
+1767,5:high.school,5:high.school,,0.8
+1768,7:university.degree,5:high.school,+,0.621
+1769,7:university.degree,5:high.school,+,0.602
+1770,6:professional.course,7:university.degree,+,0.6
+1771,7:university.degree,7:university.degree,,0.705
+1772,4:basic.9y,4:basic.9y,,1
+1773,7:university.degree,7:university.degree,,0.75
+1774,7:university.degree,7:university.degree,,0.62
+1775,1:?,2:basic.4y,,0.645
+1776,2:basic.4y,2:basic.4y,,0.589
+1777,2:basic.4y,2:basic.4y,,0.589
+1778,4:basic.9y,4:basic.9y,,0.33
+1779,2:basic.4y,2:basic.4y,,0.884
+1780,2:basic.4y,2:basic.4y,,0.5
+1781,5:high.school,5:high.school,,0.683
+1782,7:university.degree,3:basic.6y,+,0.667
+1783,2:basic.4y,5:high.school,+,0.683
+1784,5:high.school,7:university.degree,+,0.824
+1785,6:professional.course,7:university.degree,+,0.75
+1786,2:basic.4y,2:basic.4y,,0.662
+1787,7:university.degree,5:high.school,+,0.765
+1788,3:basic.6y,3:basic.6y,,0.563
+1789,5:high.school,5:high.school,,0.683
+1790,7:university.degree,7:university.degree,,0.91
+1791,5:high.school,5:high.school,,1
+1792,2:basic.4y,2:basic.4y,,0.442
+1793,4:basic.9y,4:basic.9y,,1
+1794,1:?,5:high.school,,0.493
+1795,7:university.degree,7:university.degree,,1
+1796,3:basic.6y,4:basic.9y,+,0.333
+1797,7:university.degree,7:university.degree,,0.957
+1798,5:high.school,5:high.school,,0.683
+1799,7:university.degree,7:university.degree,,0.957
+1800,7:university.degree,7:university.degree,,0.957
+1801,5:high.school,5:high.school,,0.683
+1802,7:university.degree,5:high.school,+,0.538
+1803,5:high.school,2:basic.4y,+,0.5
+1804,2:basic.4y,2:basic.4y,,0.589
+1805,7:university.degree,7:university.degree,,0.732
+1806,5:high.school,5:high.school,,0.5
+1807,6:professional.course,6:professional.course,,0.683
+1808,7:university.degree,7:university.degree,,1
+1809,7:university.degree,7:university.degree,,0.957
+1810,1:?,4:basic.9y,,0.562
+1811,6:professional.course,6:professional.course,,1
+1812,7:university.degree,7:university.degree,,0.499
+1813,4:basic.9y,4:basic.9y,,0.714
+1814,7:university.degree,7:university.degree,,0.57
+1815,7:university.degree,7:university.degree,,0.732
+1816,1:?,2:basic.4y,,0.402
+1817,7:university.degree,7:university.degree,,0.62
+1818,7:university.degree,7:university.degree,,1
+1819,7:university.degree,7:university.degree,,0.571
+1820,7:university.degree,7:university.degree,,1
+1821,6:professional.course,7:university.degree,+,0.429
+1822,6:professional.course,2:basic.4y,+,0.662
+1823,7:university.degree,7:university.degree,,0.667
+1824,1:?,7:university.degree,,0.985
+1825,7:university.degree,7:university.degree,,0.957
+1826,7:university.degree,7:university.degree,,0.957
+1827,2:basic.4y,7:university.degree,+,0.429
+
+=== Summary ===
+
+Correctly Classified Instances        1249               72.1548 %
+Incorrectly Classified Instances       482               27.8452 %
+Kappa statistic                          0.6415
+Mean absolute error                      0.1136
+Root mean squared error                  0.2373
+Total Number of Instances             1731     
+Ignored Class Unknown Instances                 96     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.000    ?          0.000    ?          ?        0.971     0.070     
+                 0.694    0.050    0.626      0.694    0.658      0.616    0.939     0.644     basic.4y
+                 0.445    0.014    0.690      0.445    0.541      0.531    0.940     0.575     basic.6y
+                 0.546    0.042    0.701      0.546    0.614      0.561    0.903     0.652     basic.9y
+                 0.755    0.111    0.683      0.755    0.717      0.623    0.902     0.712     high.school
+                 0.641    0.018    0.830      0.641    0.723      0.699    0.952     0.753     professional.course
+                 0.881    0.126    0.764      0.881    0.818      0.730    0.943     0.854     university.degree
+Weighted Avg.    0.722    0.081    ?          0.722    ?          ?        0.928     0.735     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+   0   0   0   0   1   0   3 |   a = 
+   0 129   3  15  13   3  23 |   b = basic.4y
+   0  22  49  13  14   2  10 |   c = basic.6y
+   0  23   8 143  48   6  34 |   d = basic.9y
+   0  17   4  19 314   7  55 |   e = high.school
+   0   5   4  12  29 132  24 |   f = professional.course
+   0  10   3   2  41   9 482 |   g = university.degree
+

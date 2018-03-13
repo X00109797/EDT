@@ -41,3 +41,8 @@ h6
 h7
 h8
 h9
+
+#******************** Part 4 *******************************************************
+
+extremeValue <- ggplot(BANKINGrel, aes(x=y, y=duration, color=y)) + geom_point()+ ggtitle("Scatter Plot Duartion x Target")
+extremeValue
