@@ -236,13 +236,16 @@ for (i in 1:ncol(BANKINGrel.numeric)) {
     mean(BANKINGrel.numeric[, i], na.rm = TRUE)
 }
 
-M <- cor(BANKINGrel.numeric)
-corrplot(M, type = "upper", method = "shade")
+# M <- cor(BANKINGrel.numeric)
+# corrplot(M, type = "upper", method = "shade")
 M <- cor(BANKINGrel.numeric)
 corrplot(M, method = "circle", order = "alphabet")
 
+corrcef <-cov(BANKINGrel.numeric, use="complete.obs")
 
+corrcef
 
+write.csv(corrcef, file = "C:/Users/Robert/Documents/4th Year/Semester 8/EDT/CA 1/EDT/corr.csv",row.names=TRUE)
 
 
 
